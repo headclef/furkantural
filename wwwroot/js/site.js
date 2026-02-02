@@ -242,3 +242,53 @@ consentClose.addEventListener("click", () => {
         closeConsent();
     }
 })();
+
+// SCROLL REVEAL LOGIC
+(function () {
+    const reveals = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                // Stop observing once revealed if you want it to happen only once
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    reveals.forEach((element) => {
+        revealObserver.observe(element);
+    });
+})();
+
+// ACTIVE NAVIGATION LOGIC
+(function () {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
+                if (!id) return;
+
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    const href = link.getAttribute("href");
+                    if (href === `#${id}`) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        });
+    }, {
+        threshold: 0.55 // Highlight when 55% visible
+    });
+
+    sections.forEach((section) => {
+        navObserver.observe(section);
+    });
+})();

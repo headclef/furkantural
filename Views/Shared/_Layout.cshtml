@@ -13,6 +13,7 @@
     <title>@ViewData["Title"]</title>
 </head>
 <body>
+    <div id="canvas-container"></div>
     @await RenderSectionAsync("Styles", required: false)
     <header class="navbar">
         <div class="nav-inner">
@@ -42,6 +43,9 @@
         <br />
         @versionConfiguration.Value.Version
     </footer>
+    <!-- Three.js from CDN (Global) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="~/js/site-3d.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
