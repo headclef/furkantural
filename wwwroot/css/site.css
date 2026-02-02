@@ -476,6 +476,77 @@ section {
     line-height: 1.4;
 }
 
+/* PROJECTS */
+.projects-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="light"] .project-card:hover {
+    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.15);
+}
+
+.project-domain {
+    font-size: .8rem;
+    font-family: monospace;
+    color: var(--accent);
+    margin-bottom: .5rem;
+    opacity: 0.8;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.project-desc {
+    font-size: .9rem;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.project-link {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: auto;
+}
+
+.project-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
 /* PRICING */
 .pricing-wrap {
     display: grid;
