@@ -1,15 +1,17 @@
-﻿using furkantural.Services.Abstract;
+﻿using furkantural.Models;
+using furkantural.Services.Abstract;
+using Microsoft.Extensions.Options;
 
 namespace furkantural.Services.Concrete
 {
     public class InMemoryEmailRateLimiter (
-        IConfiguration configuration
+        IOptions<SmtpViewModel> options
     ) : IEmailRateLimiter
     {
         #region Fields
         private readonly object _lockObj = new();
         private readonly Queue<DateTime> _sendHistory = new();
-        private readonly int _perHourLimit = int.TryParse(configuration["DoNotReplyEmailSettings:PerHourLimit"], out var val) ? val : 50;
+        private readonly int _perHourLimit = options.Value.PerHourLimit;
         #endregion
 
         #region Methods

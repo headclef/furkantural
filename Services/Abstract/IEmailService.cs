@@ -1,4 +1,5 @@
 ﻿using furkantural.Services.Concrete;
+using furkantural.Wrappers;
 
 namespace furkantural.Services.Abstract
 {
@@ -12,7 +13,7 @@ namespace furkantural.Services.Abstract
         /// <param name="emailType">Hangi tipte e-posta? <seealso cref="EmailType.Contact"/> mı? Yoksa <seealso cref="EmailType.Listener"/> mı?</param>
         /// <param name="placeholders">Şablon üzerindeki alanlar</param>
         /// <returns></returns>
-        Task SendTransactionalEmailAsync(string toEmail, EmailType emailType, Dictionary<string, string> placeholders);
+        Task<Result> SendTransactionalEmailAsync(string toEmail, EmailType emailType, Dictionary<string, string> placeholders);
         #endregion
     }
 }

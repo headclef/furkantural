@@ -3,6 +3,7 @@ using furkantural.Services.Abstract;
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Options;
 using MimeKit;
+using furkantural.Wrappers;
 
 namespace furkantural.Services.Concrete
 {
@@ -10,7 +11,8 @@ namespace furkantural.Services.Concrete
         IOptions<SmtpViewModel> smtpOptions,
         IOptions<AllowerViewModel> allowerOptions,
         IEmailRateLimiter rateLimiter,
-        ILogService logService
+        ILogService logService,
+        IWebHostEnvironment env
     ) : IEmailService
     {
         #region Fields
@@ -18,20 +20,21 @@ namespace furkantural.Services.Concrete
         private readonly AllowerViewModel _alloweroptions = allowerOptions.Value;
         private readonly IEmailRateLimiter _rateLimiter = rateLimiter;
         private readonly ILogService _logService = logService;
+        private readonly IWebHostEnvironment _env = env;
         #endregion
 
         #region Methods
-        public async Task SendTransactionalEmailAsync(string toEmail, EmailType emailType, Dictionary<string, string> placeholders)
+        public async Task<Result> SendTransactionalEmailAsync(string toEmail, EmailType emailType, Dictionary<string, string> placeholders)
         {
             if (!_alloweroptions.Smtp)
             {
                 await _logService.Log(LogLevel.Error, "Email service is disabled.");
-                return;
+                return Result.Fail("Email service is disabled.");
             }
             else if (string.IsNullOrWhiteSpace(toEmail))
             {
                 await _logService.Log(LogLevel.Error, $"User email is not set or not correct: {toEmail}");
-                return;
+                return Result.Fail("Invalid email address.");
             }
 
             try
@@ -65,21 +68,28 @@ namespace furkantural.Services.Concrete
                     // Disconnect from the server.
                     await smtpClient.DisconnectAsync(true);
                 }
+                else
+                {
+                    await _logService.Log(LogLevel.Warning, $"Rate limit exceeded for email: {toEmail}");
+                    return Result.Fail("Rate limit exceeded. Please try again later.");
+                }
 
                 // Log the success.
                 await _logService.Log(LogLevel.Success, $"An email has been sent to: {toEmail}");
+                return Result.Ok($"Email sent to {toEmail}");
             }
             catch (Exception exception)
             {
                 await _logService.Log(LogLevel.Error, $"An error occured while executing emailing: {exception.Message}");
-                throw;
+                return Result.Fail($"Internal error: {exception.Message}");
             }
         }
 
         private async Task<string> GetHtmlBodyAsync(EmailType emailType, Dictionary<string, string> placeholders)
         {
             // The template that's going to be used for sending. Changes based on which email type it is.
-            string template = File.ReadAllText($"wwwroot/templates/{emailType.ToString().ToLower()}.html");
+            var path = Path.Combine(_env.WebRootPath, "templates", $"{emailType.ToString().ToLower()}.html");
+            string template = await File.ReadAllTextAsync(path);
 
             // Fill and replace each detail with their respective values that's been set before this progress.
             foreach (var placeholder in placeholders)

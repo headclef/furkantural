@@ -2,6 +2,7 @@
 using furkantural.Services.Abstract;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
+using furkantural.Wrappers;
 
 
 namespace furkantural.Services.Concrete
@@ -19,12 +20,12 @@ namespace furkantural.Services.Concrete
         #endregion
 
         #region Methods
-        public async Task<bool> ValidateTokenAsync(string token, string? remoteIp = null, CancellationToken ct = default)
+        public async Task<Result> ValidateTokenAsync(string token, string? remoteIp = null, CancellationToken ct = default)
         {
             if (string.IsNullOrWhiteSpace(token))
             {
                 await _logService.Log(LogLevel.Error, "Turnstile token doğrulama başarısız: Token boş!");
-                return false;
+                return Result.Fail("Token is empty.");
             }
 
             try
@@ -44,7 +45,7 @@ namespace furkantural.Services.Concrete
                 if (!response.IsSuccessStatusCode)
                 {
                     await _logService.Log(LogLevel.Error, $"Turnstile token doğrulama başarısız: {response.StatusCode}");
-                    return false;
+                    return Result.Fail($"Verification check failed: {response.StatusCode}");
                 }
 
                 using var st = await response.Content.ReadAsStreamAsync(ct);
@@ -52,17 +53,19 @@ namespace furkantural.Services.Concrete
 
                 if (doc == null || !doc.Success)
                 {
-                    await _logService.Log(LogLevel.Error, $"Turnstile token doğrulama başarısız: {(doc?.ErrorCodes != null ? string.Join(", ", doc.ErrorCodes) : "Bilinmeyen hata!")}");
-                    return false;
+                    // Hata kodlarını birleştir
+                    var errorMsg = doc?.ErrorCodes != null ? string.Join(", ", doc.ErrorCodes) : "Unknown error";
+                    await _logService.Log(LogLevel.Error, $"Turnstile token doğrulama başarısız: {errorMsg}");
+                    return Result.Fail($"Security check failed: {errorMsg}");
                 }
 
                 await _logService.Log(LogLevel.Information, "Turnstile token doğrulama başarılı.");
-                return true;
+                return Result.Ok("Verification successful.");
             }
             catch (Exception ex)
             {
                 await _logService.Log(LogLevel.Error, $"Turnstile token doğrulama hatası: {ex.Message}");
-                return false;
+                return Result.Fail($"Internal error: {ex.Message}");
             }
         }
         #endregion

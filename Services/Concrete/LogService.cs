@@ -8,6 +8,7 @@ namespace furkantural.Services.Concrete
         #region Properties
         private readonly string informationLogDirectory = "InformationLogs";
         private readonly string successLogDirectory = "SuccessLogs";
+        private readonly string warningLogDirectory = "WarningLogs";
         private readonly string errorLogDirectory = "ErrorLogs";
         private static readonly ConcurrentDictionary<string, SemaphoreSlim> _fileLocks = new();
         #endregion
@@ -17,6 +18,7 @@ namespace furkantural.Services.Concrete
         {
             EnsureFolderExists(informationLogDirectory).Wait();
             EnsureFolderExists(successLogDirectory).Wait();
+            EnsureFolderExists(warningLogDirectory).Wait();
             EnsureFolderExists(errorLogDirectory).Wait();
         }
         #endregion
@@ -33,15 +35,18 @@ namespace furkantural.Services.Concrete
             // Başarılı işlem logu mu?
             bool isSuccess = logLevel == LogLevel.Success;
 
+            // Uyarı logu mu?
+            bool isWarning = logLevel == LogLevel.Warning;
+
             // Başarısız işlem logu mu?
             bool isError = logLevel == LogLevel.Error;
 
             // Klasör + Dosyanın yol birleşimi. Örneğin: "InformationLogs/2025-01-01_Information.txt".
             string path = Path.Combine(
-                isInformation ?
-                informationLogDirectory :
-                    isSuccess ? successLogDirectory :
-                    errorLogDirectory,
+                isInformation ? informationLogDirectory :
+                isSuccess ? successLogDirectory :
+                isWarning ? warningLogDirectory :
+                errorLogDirectory,
                 fileName
             );
 
@@ -72,7 +77,8 @@ namespace furkantural.Services.Concrete
     {
         Information = 0,
         Success = 1,
-        Error = 2
+        Error = 2,
+        Warning = 3
     }
     #endregion
 }

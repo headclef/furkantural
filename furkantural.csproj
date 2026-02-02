@@ -9,25 +9,25 @@
 	  <Compile Remove="Parameters\**" />
 	  <Compile Remove="Repositories\**" />
 	  <Compile Remove="ViewComponents\**" />
-	  <Compile Remove="Wrappers\**" />
+
 	  <Compile Remove="wwwroot\webfonts\**" />
 	  <Content Remove="Context\**" />
 	  <Content Remove="Parameters\**" />
 	  <Content Remove="Repositories\**" />
 	  <Content Remove="ViewComponents\**" />
-	  <Content Remove="Wrappers\**" />
+
 	  <Content Remove="wwwroot\webfonts\**" />
 	  <EmbeddedResource Remove="Context\**" />
 	  <EmbeddedResource Remove="Parameters\**" />
 	  <EmbeddedResource Remove="Repositories\**" />
 	  <EmbeddedResource Remove="ViewComponents\**" />
-	  <EmbeddedResource Remove="Wrappers\**" />
+
 	  <EmbeddedResource Remove="wwwroot\webfonts\**" />
 	  <None Remove="Context\**" />
 	  <None Remove="Parameters\**" />
 	  <None Remove="Repositories\**" />
 	  <None Remove="ViewComponents\**" />
-	  <None Remove="Wrappers\**" />
+
 	  <None Remove="wwwroot\webfonts\**" />
 	</ItemGroup>
 	<ItemGroup>

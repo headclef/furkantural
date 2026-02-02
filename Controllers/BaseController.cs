@@ -37,15 +37,17 @@ namespace furkantural.Controllers
         public async Task<IActionResult> SendMail(MailViewModel viewModel)
         {
             // Pre-validate
-            if (!ModelState.IsValid) { return await Task.FromResult(BadRequest("Formda oynamalar yapmayalım, bu senin iyiliğin için.")); }
+            if (!ModelState.IsValid) { return await Task.FromResult(BadRequest("Formda oynamalar yapmayalÄ±m, bu senin iyiliÄŸin iÃ§in.")); }
 
             // Turnstile validation
             var ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString();
-            var isValidTurnstile = await _turnstileService.ValidateTokenAsync(viewModel.TurnstileResponse, ipAddress);
-            if (!isValidTurnstile)
+            var turnstileResult = await _turnstileService.ValidateTokenAsync(viewModel.TurnstileResponse, ipAddress);
+            if (!turnstileResult.Success)
             {
-                ModelState.AddModelError(string.Empty, "Güvenlik doğrulaması başarısız oldu. Lütfen tekrar deneyiniz.");
-                return await Task.FromResult(BadRequest("Güvenlik doğrulamasını tamamlamak zorundasın..."));
+                // Hata mesajÄ±nÄ± servisten al
+                var msg = turnstileResult.Errors.FirstOrDefault() ?? "GÃ¼venlik doÄŸrulamasÄ± baÅŸarÄ±sÄ±z.";
+                ModelState.AddModelError(string.Empty, msg);
+                return await Task.FromResult(BadRequest(msg));
             }
 
             // Ready the placeholders before sending out.
@@ -58,14 +60,22 @@ namespace furkantural.Controllers
                 { "IpAddress", await GetClientIp(HttpContext) }
             };
 
-            // 1) Send to listener
-            await _emailService.SendTransactionalEmailAsync(_smtpOptions.ListenerEmail, EmailType.Listener, placeholders);
+            // 1) Send to listener (Admin)
+            var adminMailResult = await _emailService.SendTransactionalEmailAsync(_smtpOptions.ListenerEmail, EmailType.Listener, placeholders);
 
-            // 2) Send to user
-            await _emailService.SendTransactionalEmailAsync(viewModel.Email, EmailType.Contact, placeholders);
+            // 2) Send to user (Contact)
+            var userMailResult = await _emailService.SendTransactionalEmailAsync(viewModel.Email, EmailType.Contact, placeholders);
 
-            // Return ok if success
-            return await Task.FromResult(Ok("Tamamdır, iletin bana ulaştı, en kısa sürede sana döneceğim!"));
+            if (!adminMailResult.Success && !userMailResult.Success)
+            {
+                 // EÄŸer ikisi de baÅŸarÄ±sÄ±zsa kullanÄ±cÄ±ya hata dÃ¶n
+                 // KullanÄ±cÄ±ya giden mailin hatasÄ±nÄ± Ã¶ncelikli gÃ¶ster
+                 var errorMsg = userMailResult.Errors.FirstOrDefault() ?? adminMailResult.Errors.FirstOrDefault() ?? "E-posta servisi ÅŸu anda Ã§alÄ±ÅŸmÄ±yor.";
+                 return await Task.FromResult(BadRequest(errorMsg));
+            }
+
+            // Return ok if success (at least one sent)
+            return await Task.FromResult(Ok("TamamdÄ±r, iletin bana ulaÅŸtÄ±, en kÄ±sa sÃ¼rede sana dÃ¶neceÄŸim!"));
         }
 
         [HttpGet]
@@ -78,11 +88,11 @@ namespace furkantural.Controllers
         #region Helpers
         private async Task<string> GetClientIp(HttpContext context)
         {
-            // 1) Cloudflare özel başlığı var ise; (CF-Connection-IP)
+            // 1) Cloudflare Ã¶zel baÄŸlÄ± var ise; (CF-Connection-IP)
             if (context.Request.Headers.TryGetValue("CF-Connecting-IP", out var cfIp) && !string.IsNullOrWhiteSpace(cfIp))
                 return cfIp.ToString();
 
-            // 2) Standart proxy/header: X-Forwarded-For (yani birden fazla geçişli de olabilir -> ilk gerçek istemci hangisiyse artık)
+            // 2) Standart proxy/header: X-Forwarded-For (yani birden fazla geÃ§iÅŸli de olabilir -> ilk gerÃ§ek istemci hangisiyse artÄ±k)
             if (context.Request.Headers.TryGetValue("X-Forwarded-For", out var xff) && !StringValues.IsNullOrEmpty(xff))
             {
                 var first = xff.ToString().Split(',', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).FirstOrDefault();
@@ -90,11 +100,11 @@ namespace furkantural.Controllers
                     return first;
             }
 
-            // 3) Fallback: doğrudan bağlantı IP'si
+            // 3) Fallback: doÄŸrudan baÄŸlantÄ± IP'si
             var remoteIp = context.Connection.RemoteIpAddress;
             if (remoteIp is not null)
             {
-                // IPv4 biçiminde almak istersen MapToIPv4 kullan
+                // IPv4 biÃ§iminde almak istersen MapToIPv4 kullan
                 try
                 {
                     return remoteIp.MapToIPv4().ToString();
