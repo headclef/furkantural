@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesajın bana ulaştı</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #121212;
+            color: #f1f1f1;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #1e1e1e;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #2f2f2f;
+        }
+
+        h1 {
+            color: #ffcc66;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .info {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 25px;
+        }
+
+        a {
+            color: #ffcc66;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mesajın bana ulaştı 🚀</h1>
+
+        <p>Merhaba <strong>{{NameSurname}}</strong>,</p>
+        <p>
+            İletişim formundan gönderdiğin mesaj başarıyla ulaştı.
+            En kısa sürede geri dönüş yapacağım — kahvemi hazırlıyorum bile ☕
+        </p>
+
+        <div class="info">
+            <p><strong>Gönderdiğin bilgiler:</strong></p>
+            <p>📧 <strong>E-posta:</strong> {{Email}}</p>
+            <p>📝 <strong>Mesaj:</strong><br>{{MessageNeed}}</p>
+        </div>
+
+        <p>
+            Eğer yanlışlıkla gönderdiysen, bu maili dikkate alma.
+            Aksi durumda, kısa süre içinde dönüş alacaksın.
+        </p>
+
+        <div class="footer">
+            — Furkan Tural • <a href="https://furkantural.com">furkantural.com</a> —
+        </div>
+    </div>
+</body>
+</html>

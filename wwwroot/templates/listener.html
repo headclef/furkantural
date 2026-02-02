@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni İletişim Formu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0f0f0f;
+            color: #f1f1f1;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 650px;
+            background-color: #1a1a1a;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        h2 {
+            color: #ffa64d;
+            margin-bottom: 10px;
+        }
+
+        .field {
+            margin-bottom: 15px;
+        }
+
+        .label {
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        .value {
+            color: #fefefe;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Yeni İletişim Formu Gönderildi 📩</h2>
+
+        <div class="field">
+            <span class="label">👤 Ad Soyad:</span>
+            <div class="value">{{NameSurname}}</div>
+        </div>
+
+        <div class="field">
+            <span class="label">📧 E-posta:</span>
+            <div class="value">{{Email}}</div>
+        </div>
+
+        <div class="field">
+            <span class="label">🕒 Gönderim Zamanı:</span>
+            <div class="value">{{SendTime}}</div>
+        </div>
+
+        <div class="field">
+            <span class="label">🌍 IP Adresi:</span>
+            <div class="value">{{IpAddress}}</div>
+        </div>
+
+        <div class="field">
+            <span class="label">💬 Mesaj:</span>
+            <div class="value" style="white-space:pre-line;">{{MessageNeed}}</div>
+        </div>
+
+        <div class="footer">
+            Bu e-posta sistem tarafından otomatik olarak oluşturulmuştur.
+        </div>
+    </div>
+</body>
+</html>

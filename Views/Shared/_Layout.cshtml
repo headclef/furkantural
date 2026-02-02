@@ -1,0 +1,47 @@
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<VersionViewModel> versionConfiguration;
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Furkan Tural</title>
+    <!-- META DATAS -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Website Developer, Backend Developer, Full-Stack Developer, Developer, Website, Backend, Full-Stack" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    @await RenderSectionAsync("Styles", required: false)
+    <header class="navbar">
+        <div class="nav-inner">
+            <div class="brand"><a asp-action="Index" asp-controller="Base" style="text-decoration: none;">Furkan<span>Tural</span></a></div>
+
+            <nav class="nav-links">
+                <a href="#home">Ana Sayfa</a>
+                <a href="#about">Özgeçmiş</a>
+                <a href="#skills">Yetenekler</a>
+                <a href="#pricing">Fiyatlar</a>
+                <a href="#contact">İletişim</a>
+            </nav>
+
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Tema değiştir">
+                <span id="themeIcon">🌙</span>
+                <span class="toggle-text">Dark</span>
+            </button>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="footer">
+        © <span id="year"></span> Furkan Tural — Tüm hakları saklıdır.
+        <br />
+        Bu site ciddi. Tasarım da ciddi. Kod daha ciddi 🙂
+        <br />
+        @versionConfiguration.Value.Version
+    </footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
