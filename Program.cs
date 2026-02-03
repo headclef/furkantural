@@ -1,44 +1,50 @@
-using furkantural.Models;
+ï»¿using furkantural.Models;
 using furkantural.Registrations;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.EntityFrameworkCore;
+using furkantural.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 #region Container Injections
-// EmailSettings ayarlarý için gerekli modelin kaydýdýr.
+// EmailSettings ayarlar iin gerekli modelin kayddr.
 builder.Services.Configure<SmtpViewModel>(builder.Configuration.GetSection("Smtp"));
 
-// EmailSettings ayarlarý için gerekli modelin kaydýdýr.
+// EmailSettings ayarlar iin gerekli modelin kayddr.
 builder.Services.Configure<AllowerViewModel>(builder.Configuration.GetSection("Allower"));
 
-// CloudFlare Turnstile ayarlarý için gerekli modelin kaydýdýr.
+// CloudFlare Turnstile ayarlar iin gerekli modelin kayddr.
 builder.Services.Configure<TurnstileViewModel>(builder.Configuration.GetSection("Turnstile"));
 
-// Versiyon yönetimi için model doldurumu
+// Versiyon ynetimi iin model doldurumu
 builder.Services.Configure<VersionViewModel>(builder.Configuration.GetSection("AppVersion"));
 
-// AddServices metodunu çaðýrarak AutoMapper ve diðer servisleri ekle.
+// VeritabanÄ± baÄŸlantÄ±sÄ±
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// AddServices metodunu ararak AutoMapper ve dier servisleri ekle.
 builder.Services.AddServices();
 
-// HttpClient kayýt için gereklidir.
+// HttpClient kayt iin gereklidir.
 builder.Services.AddHttpClient();
 
-// Tüm controller'lar için varsayýlan yetkilendirme politikasý belirle
+// Tm controller'lar iin varsaylan yetkilendirme politikas belirle
 builder.Services.AddControllersWithViews();
 #endregion
 
 var app = builder.Build();
 
 #region App Configurations
-// Proxy 'leri öne çýkar.
+// Proxy 'leri ne kar.
 var forwardedOptions = new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
 };
 app.UseForwardedHeaders(forwardedOptions);
 
-// Hatalarý her ortamda hata sayfasýna yönlenirmek için gereklidir.
+// Hatalar her ortamda hata sayfasna ynlenirmek iin gereklidir.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Base/Error");
@@ -57,25 +63,25 @@ app.Use(async (ctx, next) =>
     {
         ctx.Response.Clear();
         ctx.Response.StatusCode = 400;
-        ctx.Request.Path = "/Base/Error/Code=400&Type=Bad%20Request&Message=Var%20bir%20sýkýntý&Detail=Galiba%20bir%20problem%20oluþtu%20istersen%20tekrar%20dene%20heh?";
+        ctx.Request.Path = "/Base/Error/Code=400&Type=Bad%20Request&Message=Var%20bir%20sknt&Detail=Galiba%20bir%20problem%20olutu%20istersen%20tekrar%20dene%20heh?";
         await next();
     }
 });
 
-// HTTP isteklerini HTTPS'e yönlendir
+// HTTP isteklerini HTTPS'e ynlendir
 app.UseHttpsRedirection();
 
-// Statik dosyalarýn sunulmasýný etkinleþtir
+// Statik dosyalarn sunulmasn etkinletir
 app.UseStaticFiles();
 
-// Rota belirlemeyi etkinleþtir
+// Rota belirlemeyi etkinletir
 app.UseRouting();
 
-// Varsayýlan controller rotasýný belirle
+// Varsaylan controller rotasn belirle
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Base}/{action=Index}/{id?}");
 #endregion
 
-// Uygulamayý çalýþtýr
+// Uygulamay altr
 app.Run();

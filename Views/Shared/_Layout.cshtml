@@ -38,11 +38,14 @@
         @RenderBody()
     </main>
     <footer class="footer">
-        © <span id="year"></span> Furkan Tural — Tüm hakları saklıdır.
-        <br />
-        Bu site ciddi. Tasarım da ciddi. Kod daha ciddi 🙂
-        <br />
-        @versionConfiguration.Value.Version
+        <div class="footer-inner">
+            <div class="footer-left">
+                © <span id="year"></span> Furkan Tural
+            </div>
+            <div class="footer-right">
+                @versionConfiguration.Value.Version
+            </div>
+        </div>
     </footer>
     <!-- Three.js from CDN (Global) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

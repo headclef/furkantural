@@ -709,10 +709,17 @@ form .field {
 
 .footer {
     border-top: 1px solid var(--border-color);
-    text-align: center;
-    font-size: .7rem;
     color: var(--text-dim);
-    padding: 2rem 1rem 4rem;
+    font-size: .75rem;
+}
+
+.footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer a {

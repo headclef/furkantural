@@ -1,5 +1,6 @@
 ﻿using furkantural.Services.Abstract;
 using furkantural.Services.Concrete;
+using Microsoft.AspNetCore.Http;
 
 namespace furkantural.Registrations
 {
@@ -11,6 +12,7 @@ namespace furkantural.Registrations
             // Add services
             services.AddSingleton<IEmailRateLimiter, InMemoryEmailRateLimiter>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<ILogService, LogService>();
 
             // TurnstileService can be scoped as it may depend on scoped services

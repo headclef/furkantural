@@ -28,12 +28,12 @@ namespace furkantural.Services.Concrete
         {
             if (!_alloweroptions.Smtp)
             {
-                await _logService.Log(LogLevel.Error, "Email service is disabled.");
+                await _logService.Error("Email service is disabled.");
                 return Result.Fail("Email service is disabled.");
             }
             else if (string.IsNullOrWhiteSpace(toEmail))
             {
-                await _logService.Log(LogLevel.Error, $"User email is not set or not correct: {toEmail}");
+                await _logService.Error($"User email is not set or not correct: {toEmail}");
                 return Result.Fail("Invalid email address.");
             }
 
@@ -70,17 +70,17 @@ namespace furkantural.Services.Concrete
                 }
                 else
                 {
-                    await _logService.Log(LogLevel.Warning, $"Rate limit exceeded for email: {toEmail}");
+                    await _logService.Warning($"Rate limit exceeded for email: {toEmail}");
                     return Result.Fail("Rate limit exceeded. Please try again later.");
                 }
 
                 // Log the success.
-                await _logService.Log(LogLevel.Success, $"An email has been sent to: {toEmail}");
+                await _logService.Success($"An email has been sent to: {toEmail}");
                 return Result.Ok($"Email sent to {toEmail}");
             }
             catch (Exception exception)
             {
-                await _logService.Log(LogLevel.Error, $"An error occured while executing emailing: {exception.Message}");
+                await _logService.Error($"An error occured while executing emailing: {exception.Message}");
                 return Result.Fail($"Internal error: {exception.Message}");
             }
         }

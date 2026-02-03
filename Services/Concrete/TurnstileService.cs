@@ -24,7 +24,7 @@ namespace furkantural.Services.Concrete
         {
             if (string.IsNullOrWhiteSpace(token))
             {
-                await _logService.Log(LogLevel.Error, "Turnstile token doğrulama başarısız: Token boş!");
+                await _logService.Error("Turnstile token doğrulama başarısız: Token boş!");
                 return Result.Fail("Token is empty.");
             }
 
@@ -44,7 +44,7 @@ namespace furkantural.Services.Concrete
 
                 if (!response.IsSuccessStatusCode)
                 {
-                    await _logService.Log(LogLevel.Error, $"Turnstile token doğrulama başarısız: {response.StatusCode}");
+                    await _logService.Error($"Turnstile token doğrulama başarısız: {response.StatusCode}");
                     return Result.Fail($"Verification check failed: {response.StatusCode}");
                 }
 
@@ -55,16 +55,16 @@ namespace furkantural.Services.Concrete
                 {
                     // Hata kodlarını birleştir
                     var errorMsg = doc?.ErrorCodes != null ? string.Join(", ", doc.ErrorCodes) : "Unknown error";
-                    await _logService.Log(LogLevel.Error, $"Turnstile token doğrulama başarısız: {errorMsg}");
+                    await _logService.Error($"Turnstile token doğrulama başarısız: {errorMsg}");
                     return Result.Fail($"Security check failed: {errorMsg}");
                 }
 
-                await _logService.Log(LogLevel.Information, "Turnstile token doğrulama başarılı.");
+                await _logService.Info("Turnstile token doğrulama başarılı.");
                 return Result.Ok("Verification successful.");
             }
             catch (Exception ex)
             {
-                await _logService.Log(LogLevel.Error, $"Turnstile token doğrulama hatası: {ex.Message}");
+                await _logService.Error($"Turnstile token doğrulama hatası: {ex.Message}");
                 return Result.Fail($"Internal error: {ex.Message}");
             }
         }

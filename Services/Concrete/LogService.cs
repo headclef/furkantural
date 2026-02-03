@@ -1,84 +1,51 @@
-﻿using furkantural.Services.Abstract;
-using System.Collections.Concurrent;
+﻿using furkantural.Data;
+using furkantural.Models;
+using furkantural.Services.Abstract;
 
-namespace furkantural.Services.Concrete
+namespace furkantural.Services.Concrete;
+
+public class LogService(AppDbContext context, IHttpContextAccessor httpContextAccessor) : ILogService
 {
-    public class LogService : ILogService
+    private const string ProjectName = "FurkanTural";
+
+    public async Task LogAsync(string level, string message, string? detail = null)
     {
-        #region Properties
-        private readonly string informationLogDirectory = "InformationLogs";
-        private readonly string successLogDirectory = "SuccessLogs";
-        private readonly string warningLogDirectory = "WarningLogs";
-        private readonly string errorLogDirectory = "ErrorLogs";
-        private static readonly ConcurrentDictionary<string, SemaphoreSlim> _fileLocks = new();
-        #endregion
-
-        #region Constructors
-        public LogService()
+        try
         {
-            EnsureFolderExists(informationLogDirectory).Wait();
-            EnsureFolderExists(successLogDirectory).Wait();
-            EnsureFolderExists(warningLogDirectory).Wait();
-            EnsureFolderExists(errorLogDirectory).Wait();
-        }
-        #endregion
-
-        #region Methods
-        public async Task Log(LogLevel logLevel, string message)
-        {
-            // Loglanacak dosyanın adı.
-            string fileName = $"{DateTime.UtcNow:yyyy-MM-dd}_{logLevel}.txt";
-
-            // Bilgilendirme logu mu?
-            bool isInformation = logLevel == LogLevel.Information;
-
-            // Başarılı işlem logu mu?
-            bool isSuccess = logLevel == LogLevel.Success;
-
-            // Uyarı logu mu?
-            bool isWarning = logLevel == LogLevel.Warning;
-
-            // Başarısız işlem logu mu?
-            bool isError = logLevel == LogLevel.Error;
-
-            // Klasör + Dosyanın yol birleşimi. Örneğin: "InformationLogs/2025-01-01_Information.txt".
-            string path = Path.Combine(
-                isInformation ? informationLogDirectory :
-                isSuccess ? successLogDirectory :
-                isWarning ? warningLogDirectory :
-                errorLogDirectory,
-                fileName
-            );
-
-            // İlgili dosya ile işlem yapmak için toplam işlem limiti.
-            var gate = _fileLocks.GetOrAdd(path, _ => new SemaphoreSlim(1, 1));
-            await gate.WaitAsync();
-            try
+            var log = new Log
             {
-                // Dosya yoksa kendisi oluşturur; paylaşım çakışmalarını azaltır
-                await File.AppendAllTextAsync(path, $"{DateTime.UtcNow:HH-mm} | {logLevel} | {message}{Environment.NewLine}");
-            }
-            finally
-            {
-                gate.Release();
-            }
-        }
+                Project = ProjectName,
+                Level = level,
+                Message = message,
+                Detail = detail,
+                Date = DateTime.Now,
+                IpAddress = GetIpAddress(),
+                Path = GetPath()
+            };
 
-        private async Task EnsureFolderExists(string folderPath)
-        {
-            if (!Directory.Exists(folderPath))
-                Directory.CreateDirectory(folderPath);
+            context.Logs.Add(log);
+            await context.SaveChangesAsync();
         }
-        #endregion
+        catch
+        {
+            // Logging should not break the application flow if it fails
+        }
     }
 
-    #region Enums
-    public enum LogLevel
+    public Task Info(string message, string? detail = null) => LogAsync("Info", message, detail);
+    public Task Error(string message, string? detail = null) => LogAsync("Error", message, detail);
+    public Task Success(string message, string? detail = null) => LogAsync("Success", message, detail);
+    public Task Warning(string message, string? detail = null) => LogAsync("Warning", message, detail);
+
+    private string? GetIpAddress()
     {
-        Information = 0,
-        Success = 1,
-        Error = 2,
-        Warning = 3
+        var httpContext = httpContextAccessor.HttpContext;
+        return httpContext?.Connection?.RemoteIpAddress?.ToString();
     }
-    #endregion
+
+    private string? GetPath()
+    {
+        var httpContext = httpContextAccessor.HttpContext;
+        return httpContext?.Request?.Path;
+    }
 }
