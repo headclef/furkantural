@@ -62,12 +62,12 @@ a:not([class]):hover {
 }
 
 section {
-    padding: 4rem 1.5rem;
+    padding: 7.5rem 1.5rem;
 }
 
 @media(min-width:768px) {
     section {
-        padding: 5rem 2rem;
+        padding: 10rem 2rem;
     }
 }
 
@@ -271,7 +271,6 @@ section {
 }
 
 .hero-card:hover {
-    transform: translateY(-5px);
     border-color: rgba(56, 189, 248, 0.3);
     box-shadow: 0 40px 100px -10px rgba(0, 0, 0, 0.9);
 }
@@ -368,7 +367,6 @@ section {
 }
 
 .card:hover {
-    transform: translateY(-5px);
     border-color: rgba(56, 189, 248, 0.2);
     box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.8);
 }
@@ -446,7 +444,6 @@ section {
 }
 
 .skill-item:hover {
-    transform: translateY(-3px) scale(1.02);
     border-color: var(--accent);
     background-color: var(--bg-card-solid);
 }
@@ -498,7 +495,6 @@ section {
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
     border-color: var(--accent);
     box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.6);
 }
@@ -573,7 +569,6 @@ section {
 }
 
 .price-card:hover {
-    transform: translateY(-8px);
     box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.5);
     border-color: var(--accent);
 }
@@ -940,6 +935,9 @@ form .field {
 .hero {
     position: relative;
     /* Hero is transparent now so 3D shows through */
+    min-height: calc(100vh - 60px);
+    display: grid;
+    align-content: center;
 }
 
 /* SCROLL REVEAL ANIMATIONS */
