@@ -11,54 +11,58 @@
 
 @if (Model is null)
 {
-    <div class="card">
-        <div class="status-code">
-            <span id="errCode">500</span>
-            <span class="status-label" id="errLabel">Internal Server Error</span>
-        </div>
+    <div class="error-page-container">
+        <div class="error-card">
+            <div class="status-code">
+                <span id="errCode">500</span>
+                <span class="status-label" id="errLabel">Internal Server Error</span>
+            </div>
 
-        <div class="status-message" id="errMessage">
-            Beklenmeyen bir hata oluştu.
-        </div>
+            <div class="status-message" id="errMessage">
+                Beklenmeyen bir hata oluştu.
+            </div>
 
-        <div class="status-desc" id="errDesc">
-            İstediğin işlem tamamlanamadı. Bu durum kalıcı değilse birazdan tekrar dene.
-            Eğer bu ekran sürekli çıkıyorsa geliştiricimize haber ver.
-        </div>
+            <div class="status-desc" id="errDesc">
+                İstediğin işlem tamamlanamadı. Bu durum kalıcı değilse birazdan tekrar dene.
+                Eğer bu ekran sürekli çıkıyorsa geliştiricimize haber ver.
+            </div>
 
-        <div class="actions">
-            <button class="btn btn-outline" id="btnBack">← Geri dön</button>
-            <a class="btn btn-primary" id="btnHome" href="index.html">Ana sayfa</a>
-        </div>
+            <div class="actions">
+                <button class="btn btn-outline" id="btnBack" onclick="history.back()">← Geri dön</button>
+                <a class="btn btn-primary" id="btnHome" href="/">Ana sayfa</a>
+            </div>
 
-        <div class="footer-hint">
-            <div id="techHint"></div>
+            <div class="footer-hint">
+                <div id="techHint"></div>
+            </div>
         </div>
     </div>
 }
 else
 {
-    <div class="card">
-        <div class="status-code">
-            <span id="errCode">@Model.Code</span>
-            <span class="status-label" id="errLabel">@Model.Type</span>
-        </div>
+    <div class="error-page-container">
+        <div class="error-card">
+            <div class="status-code">
+                <span id="errCode">@Model.Code</span>
+                <span class="status-label" id="errLabel">@Model.Type</span>
+            </div>
 
-        <div class="status-message" id="errMessage">
-            @Model.Message
-        </div>
+            <div class="status-message" id="errMessage">
+                @Model.Message
+            </div>
 
-        <div class="status-desc" id="errDesc">
-            @Model.Detail            
-        </div>
+            <div class="status-desc" id="errDesc">
+                @Model.Detail            
+            </div>
 
-        <div class="actions">
-            <button class="btn btn-outline" id="btnBack">← Geri dön</button>
-            <a asp-action="Index" asp-controller="Base" class="btn btn-primary" id="btnHome">Ana sayfa</a>
-        </div>
+            <div class="actions">
+                <button class="btn btn-outline" id="btnBack" onclick="history.back()">← Geri dön</button>
+                <a asp-action="Index" asp-controller="Base" class="btn btn-primary" id="btnHome">Ana sayfa</a>
+            </div>
 
-        <div class="footer-hint">
-            <div id="techHint"></div>
+            <div class="footer-hint">
+                <div id="techHint"></div>
+            </div>
         </div>
     </div>
 }

@@ -60,6 +60,9 @@ namespace furkantural.Controllers
                 { "IpAddress", await GetClientIp(HttpContext) }
             };
 
+            // Log the attempt
+            await _logService.Info($"Visitor {viewModel.Email} is attempting to send a contact form.");
+
             // 1) Send to listener (Admin)
             var adminMailResult = await _emailService.SendTransactionalEmailAsync(_smtpOptions.ListenerEmail, EmailType.Listener, placeholders);
 
@@ -71,10 +74,13 @@ namespace furkantural.Controllers
                  // Eğer ikisi de başarısızsa kullanıcıya hata dön
                  // Kullanıcıya giden mailin hatasını öncelikli göster
                  var errorMsg = userMailResult.Errors.FirstOrDefault() ?? adminMailResult.Errors.FirstOrDefault() ?? "E-posta servisi şu anda çalışmıyor.";
+                 
+                 await _logService.Error($"Contact form submission failed for {viewModel.Email}.");
                  return await Task.FromResult(BadRequest(errorMsg));
             }
 
             // Return ok if success (at least one sent)
+            await _logService.Success($"Contact form submitted successfully for {viewModel.Email}.");
             return await Task.FromResult(Ok("Tamamdır, iletin bana ulaştı, en kısa sürede sana döneceğim!"));
         }
 
