@@ -14,22 +14,21 @@
     <div class="error-page-container">
         <div class="error-card">
             <div class="status-code">
-                <span id="errCode">500</span>
-                <span class="status-label" id="errLabel">Internal Server Error</span>
+                <span id="errCode">@Localizer["Error_Default_Code"]</span>
+                <span class="status-label" id="errLabel">@Localizer["Error_Default_Label"]</span>
             </div>
 
             <div class="status-message" id="errMessage">
-                Beklenmeyen bir hata oluştu.
+                @Localizer["Error_Default_Message"]
             </div>
 
             <div class="status-desc" id="errDesc">
-                İstediğin işlem tamamlanamadı. Bu durum kalıcı değilse birazdan tekrar dene.
-                Eğer bu ekran sürekli çıkıyorsa geliştiricimize haber ver.
+                @Localizer["Error_Default_Desc"]
             </div>
 
             <div class="actions">
-                <button class="btn btn-outline" id="btnBack" onclick="history.back()">← Geri dön</button>
-                <a class="btn btn-primary" id="btnHome" href="/">Ana sayfa</a>
+                <button class="btn btn-outline" id="btnBack" onclick="history.back()">@Localizer["Btn_Back"]</button>
+                <a class="btn btn-primary" id="btnHome" href="/">@Localizer["Btn_Home"]</a>
             </div>
 
             <div class="footer-hint">
@@ -56,8 +55,8 @@ else
             </div>
 
             <div class="actions">
-                <button class="btn btn-outline" id="btnBack" onclick="history.back()">← Geri dön</button>
-                <a asp-action="Index" asp-controller="Base" class="btn btn-primary" id="btnHome">Ana sayfa</a>
+                <button class="btn btn-outline" id="btnBack" onclick="history.back()">@Localizer["Btn_Back"]</button>
+                <a asp-action="Index" asp-controller="Base" class="btn btn-primary" id="btnHome">@Localizer["Btn_Home"]</a>
             </div>
 
             <div class="footer-hint">

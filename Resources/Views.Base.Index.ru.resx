@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Consent_Title" xml:space="preserve"><value>Давай поговорим немного 👇</value></data>
+  <data name="Consent_Text" xml:space="preserve"><value>Мне нужно сохранить некоторую информацию в вашем браузере, и я должен получить эту информацию от вас. &lt;br&gt;&lt;br&gt; Но не волнуйтесь; Я буду использовать эту информацию для темы (темная/светлая), формы и т.д. Так что не волнуйтесь, ваша информация не будет использована в коммерческих целях.</value></data>
+  <data name="Consent_Btn_Ok" xml:space="preserve"><value>Понял</value></data>
+  <data name="Consent_Btn_Close" xml:space="preserve"><value>Закрыть</value></data>
+  <data name="Toast_Title_Status" xml:space="preserve"><value>Статус</value></data>
+  <data name="Toast_Msg_Default" xml:space="preserve"><value>Сообщение</value></data>
+  <data name="Hero_Greeting" xml:space="preserve"><value>Здравствуйте, я Фуркан.</value></data>
+  <data name="Hero_Title_1" xml:space="preserve"><value>Full-stack разработчик</value></data>
+  <data name="Hero_Title_2" xml:space="preserve"><value>решатель проблем</value></data>
+  <data name="Hero_Desc" xml:space="preserve"><value>Я могу разрабатывать и улучшать корпоративные и индивидуальные приложения на базе .NET, интеграции, сервисы обработки данных, информационные панели и панели управления. Я работаю, ориентируясь на производительность, безопасность и реальные потребности бизнеса. Я эстетичен, но я также заполняю фон, я не делаю пустую работу.</value></data>
+  <data name="Hero_Btn_Freelance" xml:space="preserve"><value>Давайте работать на фрилансе</value></data>
+  <data name="Hero_Btn_Contact" xml:space="preserve"><value>Свяжитесь со мной</value></data>
+  <data name="Hero_Card_Title" xml:space="preserve"><value>Что я могу делать?</value></data>
+  <data name="Hero_Card_Desc" xml:space="preserve"><value>Я могу повысить производительность в корпоративных проектах, решить проблемы с узкими местами, разработать и упростить уровни логирования и безопасности, а также разработать проекты под ключ от начала до конца.</value></data>
+  <data name="About_Eyebrow" xml:space="preserve"><value>Резюме</value></data>
+  <data name="About_Title" xml:space="preserve"><value>Кто я?</value></data>
+  <data name="About_Desc" xml:space="preserve"><value>Я также понимаю корпоративную сторону, потому что у меня есть опыт работы с корпоративными компаниями. В настоящее время я активно работаю на своей основной работе и т.д. Процесс, утверждение, бюджет, незавершенные работы, панические ситуации, дедлайны... Я видел все это.</value></data>
+  <data name="About_Card_Text_1" xml:space="preserve"><value>Я работаю в основном над бэкендом (.NET, MSSQL, проектирование сервисов), но мне также комфортно на фронтенде (Razor, Bootstrap, UI панели, компонентные структуры).</value></data>
+  <data name="About_Card_Text_2" xml:space="preserve"><value>Моя любимая вещь: Взять сложную проблему и сделать ее простой, отслеживаемой, документируемой.</value></data>
+  <data name="About_Card_Text_3" xml:space="preserve"><value>Я вмешиваюсь там, где вы говорите: «Это работает, но никто не хочет трогать это, потому что все связано».</value></data>
+  <data name="About_CV_Role_1" xml:space="preserve"><value>Помощник эксперта по разработке ПО</value></data>
+  <data name="About_CV_Date_1" xml:space="preserve"><value>2023 - Настоящее время</value></data>
+  <data name="About_CV_Desc_1" xml:space="preserve"><value>Корпоративные проекты .NET, интеграция, обработка данных, пользовательские панели</value></data>
+  <data name="About_CV_Role_2" xml:space="preserve"><value>Full-stack разработчик (Фриланс)</value></data>
+  <data name="About_CV_Date_2" xml:space="preserve"><value>2024 - Настоящее время</value></data>
+  <data name="About_CV_Desc_2" xml:space="preserve"><value>Пользовательские панели, отчеты о продажах, автоматизация кампаний, управление проектами</value></data>
+  <data name="Skills_Eyebrow" xml:space="preserve"><value>Навыки</value></data>
+  <data name="Skills_Title" xml:space="preserve"><value>Что я приношу на стол?</value></data>
+  <data name="Skills_Desc" xml:space="preserve"><value>Не слова, а производство. Ниже приведены области, которые я использую ежедневно.</value></data>
+  <data name="Skill_Level_Expert" xml:space="preserve"><value>Эксперт</value></data>
+  <data name="Skill_Level_Advanced" xml:space="preserve"><value>Продвинутый</value></data>
+  <data name="Skill_Level_Surgeon" xml:space="preserve"><value>Хирург</value></data>
+  <data name="Skill_Level_Partner" xml:space="preserve"><value>Партнер</value></data>
+  <data name="Skill_Desc_1" xml:space="preserve"><value>API, Windows Service, Worker Service, фоновые задачи, auth, логирование, кэширование, веб-сайт.</value></data>
+  <data name="Skill_Desc_2" xml:space="preserve"><value>Настройка производительности, рефакторинг SP, анализ индексов, целостность данных.</value></data>
+  <data name="Skill_Desc_3" xml:space="preserve"><value>Админ-панели, дизайн дашборда, валидация, безопасность.</value></data>
+  <data name="Skill_Desc_4" xml:space="preserve"><value>Адаптивный UI, темная тема, компонентная структура.</value></data>
+  <data name="Skill_Desc_5" xml:space="preserve"><value>Чтение легаси кода, вырывание, реорганизация. Без паники.</value></data>
+  <data name="Skill_Desc_6" xml:space="preserve"><value>Я создаю четкую дорожную карту для вопроса «Что мы делаем прямо сейчас?».</value></data>
+  <data name="Projects_Eyebrow" xml:space="preserve"><value>Портфолио</value></data>
+  <data name="Projects_Title" xml:space="preserve"><value>Мои другие проекты</value></data>
+  <data name="Projects_Desc" xml:space="preserve"><value>Другие платформы, которые я активно разрабатываю и которые работают.</value></data>
+  <data name="Project_1_Desc" xml:space="preserve"><value>Браузерный, быстрый и безопасный инструмент шифрования текста. Данные не хранятся на сервере, они шифруются и расшифровываются мгновенно.</value></data>
+  <data name="Project_2_Desc" xml:space="preserve"><value>Система логирования для всех проектов, которые я разрабатываю под своей крышей.</value></data>
+  <data name="Project_Link_Text" xml:space="preserve"><value>Перейти на сайт →</value></data>
+  <data name="Project_ComingSoon_Title" xml:space="preserve"><value>Скоро</value></data>
+  <data name="Project_ComingSoon_Desc" xml:space="preserve"><value>Новые проекты на подходе...</value></data>
+  <data name="Pricing_Eyebrow" xml:space="preserve"><value>Цены</value></data>
+  <data name="Pricing_Title" xml:space="preserve"><value>Фриланс пакеты</value></data>
+  <data name="Pricing_Desc" xml:space="preserve"><value>Цены ниже являются начальными точками. Предложения применяются отдельно для корпоративной работы.</value></data>
+  <data name="Plan_1_Name" xml:space="preserve"><value>Быстрое исправление / Поддержка</value></data>
+  <data name="Plan_1_Desc" xml:space="preserve"><value>Срочный баг, небольшая фича, хотфикс. Я касаюсь существующей системы.</value></data>
+  <data name="Plan_Price_Negotiable" xml:space="preserve"><value>Цена договорная.</value></data>
+  <data name="Plan_1_Feature_1" xml:space="preserve"><value>Я присоединяюсь к существующему проекту</value></data>
+  <data name="Plan_1_Feature_2" xml:space="preserve"><value>1 модуль / 1 проблема</value></data>
+  <data name="Plan_1_Feature_3" xml:space="preserve"><value>Чистка кода, объяснение, логирование</value></data>
+  <data name="Plan_Btn_Request" xml:space="preserve"><value>Запросить</value></data>
+  <data name="Plan_2_Name" xml:space="preserve"><value>Мини-панель / Дашборд</value></data>
+  <data name="Plan_Tag_Popular" xml:space="preserve"><value>Популярный</value></data>
+  <data name="Plan_2_Desc" xml:space="preserve"><value>Панель управления, экран отчета, поток CRUD. С нуля.</value></data>
+  <data name="Plan_2_Feature_1" xml:space="preserve"><value>Логин / авторизация / ролевая структура</value></data>
+  <data name="Plan_2_Feature_2" xml:space="preserve"><value>Интеграция MSSQL &amp; EF Core</value></data>
+  <data name="Plan_2_Feature_3" xml:space="preserve"><value>Мобильно-совместимый интерфейс</value></data>
+  <data name="Plan_3_Name" xml:space="preserve"><value>Корпоративное решение</value></data>
+  <data name="Plan_3_Desc" xml:space="preserve"><value>Анализ процессов, модель данных, сервисная архитектура, линия отчетности.</value></data>
+  <data name="Plan_3_Feature_1" xml:space="preserve"><value>Анализ + техническая документация</value></data>
+  <data name="Plan_3_Feature_2" xml:space="preserve"><value>Безопасность, аудит, дизайн логов</value></data>
+  <data name="Plan_3_Feature_3" xml:space="preserve"><value>Дорожная карта &amp; план спринта</value></data>
+  <data name="Plan_Btn_Meeting" xml:space="preserve"><value>Назначить встречу</value></data>
+  <data name="Contact_Eyebrow" xml:space="preserve"><value>Контакты</value></data>
+  <data name="Contact_Title" xml:space="preserve"><value>Хотите работать вместе?</value></data>
+  <data name="Contact_Desc" xml:space="preserve"><value>Заполните форму. Пусть это упадет как письмо. (Нет проблем, если вы не спам-бот 😌)</value></data>
+  <data name="Contact_Info_Text_1" xml:space="preserve"><value>У вас есть технический долг? Горит ли живая система? Или вы хотите панель с нуля?</value></data>
+  <data name="Contact_Info_Text_2" xml:space="preserve"><value>Пишите. Кратко объясните ситуацию. Я свяжусь с вами.</value></data>
+  <data name="Contact_Other_Channels" xml:space="preserve"><value>Другие каналы</value></data>
+  <data name="Form_Label_Name" xml:space="preserve"><value>Имя Фамилия</value></data>
+  <data name="Form_Placeholder_Name" xml:space="preserve"><value>Ваше имя</value></data>
+  <data name="Form_Label_Email" xml:space="preserve"><value>Электронная почта</value></data>
+  <data name="Form_Placeholder_Email" xml:space="preserve"><value>example@company.com</value></data>
+  <data name="Form_Label_Message" xml:space="preserve"><value>Сообщение / Потребность</value></data>
+  <data name="Form_Placeholder_Message" xml:space="preserve"><value>Что вам нужно? Дедлайн, система, технология...</value></data>
+  <data name="Form_Hint_Status" xml:space="preserve"><value>Статус появится в правом нижнем углу после отправки.</value></data>
+  <data name="Form_Label_Security" xml:space="preserve"><value>Проверка безопасности</value></data>
+  <data name="Form_Label_Security_Sub" xml:space="preserve"><value>(тест бот против человека)</value></data>
+  <data name="Form_Hint_Internet" xml:space="preserve"><value>Мы должны это делать, потому что интернет полон мусора 🙂</value></data>
+  <data name="Form_Btn_Send" xml:space="preserve"><value>Отправить</value></data>
+</root>

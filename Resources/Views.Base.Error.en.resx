@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Error_Default_Code" xml:space="preserve"><value>500</value></data>
+  <data name="Error_Default_Label" xml:space="preserve"><value>Internal Server Error</value></data>
+  <data name="Error_Default_Message" xml:space="preserve"><value>An unexpected error occurred.</value></data>
+  <data name="Error_Default_Desc" xml:space="preserve"><value>The operation you requested could not be completed. If this situation is not permanent, try again later. If this screen appears constantly, notify our developer.</value></data>
+  <data name="Btn_Back" xml:space="preserve"><value>← Go Back</value></data>
+  <data name="Btn_Home" xml:space="preserve"><value>Home</value></data>
+</root>

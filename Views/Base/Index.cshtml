@@ -13,19 +13,14 @@
 <div id="consentOverlay" class="consent-overlay">
     <div class="consent-modal" role="dialog" aria-modal="true" aria-labelledby="consentTitle">
         <div class="consent-title" id="consentTitle">
-            Küçük bir şey konuşalım 👇
+            @Localizer["Consent_Title"]
         </div>
         <div class="consent-text">
-            Tarayıcına bazı bilgileri kaydetmem gerekli
-            ve bu bilgileri mecburen senden almak zorundayım.
-            <br><br>
-            Ama merak etme; Bu bilgileri temayı (dark/light), form vb.
-            gibi şeyler için kullanacağım. Yani bilgilerin ticari vb.
-            amaçlar ile kullanılmayacak, merak etme.
+            @Html.Raw(Localizer["Consent_Text"].Value)
         </div>
         <div class="consent-actions">
-            <button id="consentOk" class="btn-consent btn-consent-primary">Anladım</button>
-            <button id="consentClose" class="btn-consent btn-consent-muted">Kapat</button>
+            <button id="consentOk" class="btn-consent btn-consent-primary">@Localizer["Consent_Btn_Ok"]</button>
+            <button id="consentClose" class="btn-consent btn-consent-muted">@Localizer["Consent_Btn_Close"]</button>
         </div>
     </div>
 </div>
@@ -33,8 +28,8 @@
 <!-- TOAST AREA -->
 <div class="toast-wrapper" id="toastWrapper">
     <div class="toast" id="toastBox">
-        <div class="toast-title" id="toastTitle">Durum</div>
-        <div class="toast-msg" id="toastMsg">Mesaj</div>
+        <div class="toast-title" id="toastTitle">@Localizer["Toast_Title_Status"]</div>
+        <div class="toast-msg" id="toastMsg">@Localizer["Toast_Msg_Default"]</div>
     </div>
 </div>
 
@@ -42,26 +37,23 @@
 <section id="home" class="container hero">
     <div class="hero-left reveal">
         <h1>
-            Merhaba, ben Furkan.
+            @Localizer["Hero_Greeting"]
             <br />
-            <span class="highlight">Full-stack geliştirici</span> ve
-            <span class="highlight">problem çözücü</span>.
+            <span class="highlight">@Localizer["Hero_Title_1"]</span> ve
+            <span class="highlight">@Localizer["Hero_Title_2"]</span>
         </h1>
         <p>
-            .NET tabanlı kurumsal ve bireysel uygulamalar, entegrasyonlar, veri işleme servisleri
-            dasboard ve yönetim panelleri geliştirebilir ve iyileştirebilirim.
-            Performans, güvenlik ve gerçek iş ihtiyacı odaklı çalışırım.
-            Estetik olurum ama arkasını da doldururum, boş iş yapmam.
+            @Localizer["Hero_Desc"]
         </p>
 
         <div class="hero-cta">
-            <a href="#pricing"><button class="btn-primary">Freelance Çalışalım</button></a>
-            <a href="#contact"><button class="btn-outline">İletişim Kur</button></a>
+            <a href="#pricing"><button class="btn-primary">@Localizer["Hero_Btn_Freelance"]</button></a>
+            <a href="#contact"><button class="btn-outline">@Localizer["Hero_Btn_Contact"]</button></a>
         </div>
     </div>
 
     <div class="hero-card reveal">
-        <h2>Neler yapabilirim?</h2>
+        <h2>@Localizer["Hero_Card_Title"]</h2>
         <div class="hero-tags">
             <div class="tag">.NET 8 API</div>
             <div class="tag">EF</div>
@@ -72,10 +64,7 @@
             <div class="tag">Maintenance / Refactor</div>
         </div>
         <p class="section-desc" style="margin-top:1rem;">
-            Kurumsal projelerde performans artırması yapabilir,
-            darboğaz problemlerini çözebilir,
-            loglama ve güvenlik katmanları geliştirebilir ve sadeleştirebilir,
-            baştan sona anahtar teslim projeler geliştirebilirim.
+            @Localizer["Hero_Card_Desc"]
         </p>
     </div>
 </section>
@@ -83,30 +72,23 @@
 <!-- ABOUT -->
 <section id="about" class="container">
     <div class="section-header reveal">
-        <div class="section-eyebrow">Özgeçmiş</div>
-        <div class="section-title">Kimim?</div>
+        <div class="section-eyebrow">@Localizer["About_Eyebrow"]</div>
+        <div class="section-title">@Localizer["About_Title"]</div>
         <div class="section-desc">
-            Kurumsal tarafı da anlıyorum çünkü kurumsal firmalar ile de çalışma deneyimine sahibim.
-            Hali hazırda tam zamanlı çalıştışım işimde aktif olarak vb. işlerde yer almaktayım.
-            Süreç, onay, bütçe, yetiştirilemeyen işler, panik durumları, teslim vakitleri...
-            hepsini gördüm.
+            @Localizer["About_Desc"]
         </div>
     </div>
 
     <div class="about-grid reveal">
         <div class="card about-text">
             <p>
-                Back-end ağırlıklı çalışıyorum (.NET, MSSQL, servis tasarımı)
-                ama front-end tarafında da rahatım (Razor, Bootstrap,
-                dashboard UI, component yapıları).
+                @Localizer["About_Card_Text_1"]
             </p>
             <p>
-                En sevdiğim şey: Karmaşık bir problemi alıp sade, izlenebilir,
-                dökümante edilebilir hale getirmek.
+                @Localizer["About_Card_Text_2"]
             </p>
             <p>
-                “Şu çalışıyor ama kimse dokunmak istemiyor,
-                çünkü her şey birbirine bağlı” dediğiniz yerde ben giriyorum.
+                @Localizer["About_Card_Text_3"]
             </p>
         </div>
 
@@ -114,17 +96,17 @@
             <ul class="cv-list">
                 <li>
                     <div class="cv-role">
-                        <span>Uzman Yazılımcı Yardımcısı</span>
-                        <span>2023 - Şu An</span>
+                        <span>@Localizer["About_CV_Role_1"]</span>
+                        <span>@Localizer["About_CV_Date_1"]</span>
                     </div>
-                    <div class="cv-company">Kurumsal .NET projeleri, entegrasyon, veri işleme, özel paneller</div>
+                    <div class="cv-company">@Localizer["About_CV_Desc_1"]</div>
                 </li>
                 <li>
                     <div class="cv-role">
-                        <span>Full-stack Geliştirici (Freelance)</span>
-                        <span>2024 - Şu An</span>
+                        <span>@Localizer["About_CV_Role_2"]</span>
+                        <span>@Localizer["About_CV_Date_2"]</span>
                     </div>
-                    <div class="cv-company">Özel paneller, satış raporlama, kampanya otomasyonu, proje yönetimi</div>
+                    <div class="cv-company">@Localizer["About_CV_Desc_2"]</div>
                 </li>
             </ul>
         </div>
@@ -134,10 +116,10 @@
 <!-- SKILLS -->
 <section id="skills" class="container">
     <div class="section-header reveal">
-        <div class="section-eyebrow">Yetenekler</div>
-        <div class="section-title">Masaya neler koyuyorum?</div>
+        <div class="section-eyebrow">@Localizer["Skills_Eyebrow"]</div>
+        <div class="section-title">@Localizer["Skills_Title"]</div>
         <div class="section-desc">
-            Kelime değil, üretim. Aşağıdakiler günlük kullandığım alanlar.
+            @Localizer["Skills_Desc"]
         </div>
     </div>
 
@@ -145,60 +127,60 @@
         <div class="skill-item reveal">
             <div class="skill-head">
                 <div class="skill-name">.NET / C#</div>
-                <div class="skill-level">Uzman</div>
+                <div class="skill-level">@Localizer["Skill_Level_Expert"]</div>
             </div>
             <div class="skill-desc">
-                API, Windows Service, Worker Service, background task, auth, logging, caching, website.
+                @Localizer["Skill_Desc_1"]
             </div>
         </div>
 
         <div class="skill-item reveal">
             <div class="skill-head">
                 <div class="skill-name">MSSQL / EF Core</div>
-                <div class="skill-level">Uzman</div>
+                <div class="skill-level">@Localizer["Skill_Level_Expert"]</div>
             </div>
             <div class="skill-desc">
-                Performans tuning, SP refactor, index analizi, veri bütünlüğü.
+                @Localizer["Skill_Desc_2"]
             </div>
         </div>
 
         <div class="skill-item reveal">
             <div class="skill-head">
                 <div class="skill-name">Razor / MVC</div>
-                <div class="skill-level">İleri</div>
+                <div class="skill-level">@Localizer["Skill_Level_Advanced"]</div>
             </div>
             <div class="skill-desc">
-                Admin paneller, dashboard tasarımı, validation, security.
+                @Localizer["Skill_Desc_3"]
             </div>
         </div>
 
         <div class="skill-item reveal">
             <div class="skill-head">
                 <div class="skill-name">HTML / CSS / JS</div>
-                <div class="skill-level">İleri</div>
+                <div class="skill-level">@Localizer["Skill_Level_Advanced"]</div>
             </div>
             <div class="skill-desc">
-                Responsive UI, dark mode, component bazlı yapı.
+                @Localizer["Skill_Desc_4"]
             </div>
         </div>
 
         <div class="skill-item reveal">
             <div class="skill-head">
                 <div class="skill-name">Sistem Temizliği</div>
-                <div class="skill-level">Cerrah</div>
+                <div class="skill-level">@Localizer["Skill_Level_Surgeon"]</div>
             </div>
             <div class="skill-desc">
-                Legacy kodu okumak, koparmak, yeniden düzenlemek. Panik yok.
+                @Localizer["Skill_Desc_5"]
             </div>
         </div>
 
         <div class="skill-item reveal">
             <div class="skill-head">
                 <div class="skill-name">Danışmanlık</div>
-                <div class="skill-level">Partner</div>
+                <div class="skill-level">@Localizer["Skill_Level_Partner"]</div>
             </div>
             <div class="skill-desc">
-                “Biz ne yapıyoruz şu an?” sorusuna net yol haritası çıkarırım.
+                @Localizer["Skill_Desc_6"]
             </div>
         </div>
     </div>
@@ -207,10 +189,10 @@
  <!-- PROJECTS -->
  <section id="projects" class="container">
      <div class="section-header reveal">
-         <div class="section-eyebrow">Portfolyo</div>
-         <div class="section-title">Diğer Projelerim</div>
+         <div class="section-eyebrow">@Localizer["Projects_Eyebrow"]</div>
+         <div class="section-title">@Localizer["Projects_Title"]</div>
          <div class="section-desc">
-             Aktif olarak geliştirdiğim ve yayında olan diğer platformlar.
+             @Localizer["Projects_Desc"]
          </div>
      </div>
  
@@ -228,12 +210,11 @@
                      </svg>
                  </div>
                  <div class="project-desc">
-                     Tarayıcı tabanlı, hızlı ve güvenli metin şifreleme aracı. 
-                     Veriler sunucuda saklanmaz, anlık şifrelenir ve çözülür.
+                     @Localizer["Project_1_Desc"]
                  </div>
              </div>
              <div class="project-link">
-                 Siteye Git →
+                 @Localizer["Project_Link_Text"]
              </div>
          </a>
 
@@ -250,19 +231,19 @@
                      </svg>
                  </div>
                  <div class="project-desc">
-                     Çatım altında geliştirdiğim tüm projelerin loglama sistemi.
+                     @Localizer["Project_2_Desc"]
                  </div>
              </div>
              <div class="project-link">
-                 Siteye Git →
+                 @Localizer["Project_Link_Text"]
              </div>
          </a>
  
          <!-- Placeholder for future -->
          <div class="project-card" style="opacity: 0.5; border-style: dashed; justify-content: center; align-items: center; text-align: center;">
              <div style="font-size: 2rem; margin-bottom: 1rem;">🔜</div>
-             <div class="project-title" style="margin-bottom: 0;">Yakında</div>
-             <div class="project-desc" style="margin-bottom: 0;">Yeni projeler yolda...</div>
+             <div class="project-title" style="margin-bottom: 0;">@Localizer["Project_ComingSoon_Title"]</div>
+             <div class="project-desc" style="margin-bottom: 0;">@Localizer["Project_ComingSoon_Desc"]</div>
          </div>
      </div>
  </section>
@@ -270,10 +251,10 @@
 <!-- PRICING -->
 <section id="pricing" class="container">
     <div class="section-header reveal">
-        <div class="section-eyebrow">Fiyatlar</div>
-        <div class="section-title">Freelance paketlerim</div>
+        <div class="section-eyebrow">@Localizer["Pricing_Eyebrow"]</div>
+        <div class="section-title">@Localizer["Pricing_Title"]</div>
         <div class="section-desc">
-            Aşağıdaki ücretler başlangıç noktasıdır. Kurumsal iş için teklif ayrı olur.
+             @Localizer["Pricing_Desc"]
         </div>
     </div>
 
@@ -282,22 +263,22 @@
         <div class="price-card">
             <div class="price-head">
                 <div class="plan-name">
-                    <span>Hızlı Fix / Destek</span>
+                    <span>@Localizer["Plan_1_Name"]</span>
                 </div>
                 <div class="plan-desc">
-                    Acil bug, ufak feature, hotfix. Mevcut sisteme dokunuyorum.
+                    @Localizer["Plan_1_Desc"]
                 </div>
-                <div class="plan-price">Fiyatı görüşürüz.</div>
+                <div class="plan-price">@Localizer["Plan_Price_Negotiable"]</div>
             </div>
 
             <ul class="plan-features">
-                <li><span class="check">✔</span> Var olan projeye dahil olurum</li>
-                <li><span class="check">✔</span> 1 modül / 1 sorun</li>
-                <li><span class="check">✔</span> Kod temizliği, açıklama, loglama</li>
+                <li><span class="check">✔</span> @Localizer["Plan_1_Feature_1"]</li>
+                <li><span class="check">✔</span> @Localizer["Plan_1_Feature_2"]</li>
+                <li><span class="check">✔</span> @Localizer["Plan_1_Feature_3"]</li>
             </ul>
 
             <div class="price-cta">
-                <a href="#contact"><button class="btn-primary">Talep Et</button></a>
+                <a href="#contact"><button class="btn-primary">@Localizer["Plan_Btn_Request"]</button></a>
             </div>
         </div>
 
@@ -305,23 +286,23 @@
         <div class="price-card" style="border:1px solid var(--accent);">
             <div class="price-head">
                 <div class="plan-name">
-                    <span>Mini Panel / Dashboard</span>
-                    <span style="font-size:.65rem; background-color:var(--accent); color:#0f172a; font-weight:600; border-radius:.4rem; padding:.2rem .4rem; line-height:1;">Popüler</span>
+                    <span>@Localizer["Plan_2_Name"]</span>
+                    <span style="font-size:.65rem; background-color:var(--accent); color:#0f172a; font-weight:600; border-radius:.4rem; padding:.2rem .4rem; line-height:1;">@Localizer["Plan_Tag_Popular"]</span>
                 </div>
                 <div class="plan-desc">
-                    Yönetim paneli, rapor ekranı, CRUD akışı. Sıfırdan.
+                    @Localizer["Plan_2_Desc"]
                 </div>
-                <div class="plan-price">Fiyatı görüşürüz</div>
+                <div class="plan-price">@Localizer["Plan_Price_Negotiable"]</div>
             </div>
 
             <ul class="plan-features">
-                <li><span class="check">✔</span> Giriş / yetki / rol yapısı</li>
-                <li><span class="check">✔</span> MSSQL & EF Core entegrasyonu</li>
-                <li><span class="check">✔</span> Mobil uyumlu arayüz</li>
+                <li><span class="check">✔</span> @Localizer["Plan_2_Feature_1"]</li>
+                <li><span class="check">✔</span> @Localizer["Plan_2_Feature_2"]</li>
+                <li><span class="check">✔</span> @Localizer["Plan_2_Feature_3"]</li>
             </ul>
 
             <div class="price-cta">
-                <a href="#contact"><button class="btn-primary">Talep Et</button></a>
+                <a href="#contact"><button class="btn-primary">@Localizer["Plan_Btn_Request"]</button></a>
             </div>
         </div>
 
@@ -329,22 +310,22 @@
         <div class="price-card">
             <div class="price-head">
                 <div class="plan-name">
-                    <span>Kurumsal Çözüm</span>
+                    <span>@Localizer["Plan_3_Name"]</span>
                 </div>
                 <div class="plan-desc">
-                    Süreç analizi, veri modeli, servis mimarisi, raporlama hattı.
+                    @Localizer["Plan_3_Desc"]
                 </div>
-                <div class="plan-price">Fiyatı görüşürüz</div>
+                <div class="plan-price">@Localizer["Plan_Price_Negotiable"]</div>
             </div>
 
             <ul class="plan-features">
-                <li><span class="check">✔</span> Analiz + teknik dokümantasyon</li>
-                <li><span class="check">✔</span> Security, audit, log tasarımı</li>
-                <li><span class="check">✔</span> Yol haritası & sprint planı</li>
+                <li><span class="check">✔</span> @Localizer["Plan_3_Feature_1"]</li>
+                <li><span class="check">✔</span> @Localizer["Plan_3_Feature_2"]</li>
+                <li><span class="check">✔</span> @Localizer["Plan_3_Feature_3"]</li>
             </ul>
 
             <div class="price-cta">
-                <a href="#contact"><button class="btn-primary">Toplantı Ayarla</button></a>
+                <a href="#contact"><button class="btn-primary">@Localizer["Plan_Btn_Meeting"]</button></a>
             </div>
         </div>
     </div>
@@ -353,25 +334,24 @@
 <!-- CONTACT -->
 <section id="contact" class="container">
     <div class="section-header reveal">
-        <div class="section-eyebrow">İletişim</div>
-        <div class="section-title">Birlikte çalışmak ister misin?</div>
+        <div class="section-eyebrow">@Localizer["Contact_Eyebrow"]</div>
+        <div class="section-title">@Localizer["Contact_Title"]</div>
         <div class="section-desc">
-            Formu doldur. Mail olarak düşsün. (Spam bot değilsen sorun yok 😌)
+            @Localizer["Contact_Desc"]
         </div>
     </div>
 
     <div class="contact-grid reveal">
         <div class="card contact-left">
             <p>
-                Teknik borcun mu var? Canlı sistem mi yanıyor?
-                Ya da sıfırdan panel mi istiyorsun?
+                @Localizer["Contact_Info_Text_1"]
             </p>
             <p>
-                Yaz. Durumu kısaca anlat. Ben dönerim.
+                @Localizer["Contact_Info_Text_2"]
             </p>
 
             <div class="mt-4">
-                <div style="font-size:.8rem;color:var(--text-dim);margin-bottom:.5rem; font-weight:500;">Diğer Kanallar</div>
+                <div style="font-size:.8rem;color:var(--text-dim);margin-bottom:.5rem; font-weight:500;">@Localizer["Contact_Other_Channels"]</div>
                 <div class="social-grid">
                     <a href="https://www.linkedin.com/in/furkantural" target="_blank" class="social-card">
                         <strong>LinkedIn</strong>
@@ -403,28 +383,28 @@
                 @Html.AntiForgeryToken()
 
                 <div class="field">
-                    @Html.Label("NameSurname", "Ad Soyad")
-                    @Html.TextBox("NameSurname", "", htmlAttributes: new { id = "NameSurname", name = "NameSurname", type = "text", placeholder = "Adın", required = "required" })
+                    @Html.Label("NameSurname", Localizer["Form_Label_Name"].Value)
+                    @Html.TextBox("NameSurname", "", htmlAttributes: new { id = "NameSurname", name = "NameSurname", type = "text", placeholder = Localizer["Form_Placeholder_Name"].Value, required = "required" })
                 </div>
 
                 <div class="field">
-                    @Html.Label("Email", "E-posta")
-                    @Html.TextBox("Email", "", htmlAttributes: new { id = "Email", name = "Email", type = "email", placeholder = "ornek@firma.com", required = "required" })
+                    @Html.Label("Email", Localizer["Form_Label_Email"].Value)
+                    @Html.TextBox("Email", "", htmlAttributes: new { id = "Email", name = "Email", type = "email", placeholder = Localizer["Form_Placeholder_Email"].Value, required = "required" })
                 </div>
 
                 <div class="field">
-                    @Html.Label("MessageNeed", "Mesajın / İhtiyacın")
-                    @Html.TextArea("MessageNeed", "", htmlAttributes: new { id = "MessageNeed", name = "MessageNeed", placeholder = "Neye ihtiyacın var? Deadline, sistem, teknoloji...", required = "required" })
+                    @Html.Label("MessageNeed", Localizer["Form_Label_Message"].Value)
+                    @Html.TextArea("MessageNeed", "", htmlAttributes: new { id = "MessageNeed", name = "MessageNeed", placeholder = Localizer["Form_Placeholder_Message"].Value, required = "required" })
                     <div class="form-hint mt-2">
-                        Gönderince sağ altta durum çıkacak.
+                        @Localizer["Form_Hint_Status"]
                     </div>
                 </div>
 
                 <div class="field" style="display:flex; flex-direction:column; align-items:center; gap:.5rem;">
                     <label style="font-size:.75rem;font-weight:500;color:var(--text-main);">
-                        Güvenlik Doğrulaması
+                        @Localizer["Form_Label_Security"]
                         <span style="font-size:.65rem;font-weight:400;color:var(--text-dim);">
-                            (bot musun insan mısın testi)
+                            @Localizer["Form_Label_Security_Sub"]
                         </span>
                     </label>
 
@@ -437,12 +417,12 @@
                     @Html.Hidden("TurnstileResponse", "", new { id = "TurnstileResponse" })
 
                     <div class="form-hint mt-2">
-                        Bunu yapmak zorundayız çünkü internet çöplük dolu 🙂
+                        @Localizer["Form_Hint_Internet"]
                     </div>
                 </div>
 
                 <button type="submit" id="contactSubmitBtn" class="btn-primary" style="width:100%;">
-                    Gönder
+                    @Localizer["Form_Btn_Send"]
                 </button>
             }
         </div>

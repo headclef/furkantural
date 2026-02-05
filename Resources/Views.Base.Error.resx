@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Error_Default_Code" xml:space="preserve"><value>500</value></data>
+  <data name="Error_Default_Label" xml:space="preserve"><value>Internal Server Error</value></data>
+  <data name="Error_Default_Message" xml:space="preserve"><value>Beklenmeyen bir hata oluştu.</value></data>
+  <data name="Error_Default_Desc" xml:space="preserve"><value>İstediğin işlem tamamlanamadı. Bu durum kalıcı değilse birazdan tekrar dene. Eğer bu ekran sürekli çıkıyorsa geliştiricimize haber ver.</value></data>
+  <data name="Btn_Back" xml:space="preserve"><value>← Geri dön</value></data>
+  <data name="Btn_Home" xml:space="preserve"><value>Ana sayfa</value></data>
+</root>

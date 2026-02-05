@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Error_Default_Code" xml:space="preserve"><value>500</value></data>
+  <data name="Error_Default_Label" xml:space="preserve"><value>Interner Serverfehler</value></data>
+  <data name="Error_Default_Message" xml:space="preserve"><value>Ein unerwarteter Fehler ist aufgetreten.</value></data>
+  <data name="Error_Default_Desc" xml:space="preserve"><value>Der angeforderte Vorgang konnte nicht abgeschlossen werden. Wenn dieser Zustand nicht dauerhaft ist, versuchen Sie es später erneut. Wenn dieser Bildschirm ständig erscheint, benachrichtigen Sie unseren Entwickler.</value></data>
+  <data name="Btn_Back" xml:space="preserve"><value>← Zurück</value></data>
+  <data name="Btn_Home" xml:space="preserve"><value>Startseite</value></data>
+</root>

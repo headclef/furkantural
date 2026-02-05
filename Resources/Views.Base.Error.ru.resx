@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Error_Default_Code" xml:space="preserve"><value>500</value></data>
+  <data name="Error_Default_Label" xml:space="preserve"><value>Внутренняя ошибка сервера</value></data>
+  <data name="Error_Default_Message" xml:space="preserve"><value>Произошла непредвиденная ошибка.</value></data>
+  <data name="Error_Default_Desc" xml:space="preserve"><value>Запрошенная операция не может быть завершена. Если эта ситуация не постоянна, попробуйте позже. Если этот экран появляется постоянно, сообщите нашему разработчику.</value></data>
+  <data name="Btn_Back" xml:space="preserve"><value>← Назад</value></data>
+  <data name="Btn_Home" xml:space="preserve"><value>Главная</value></data>
+</root>

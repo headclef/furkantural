@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Error_Default_Code" xml:space="preserve"><value>500</value></data>
+  <data name="Error_Default_Label" xml:space="preserve"><value>Erreur interne du serveur</value></data>
+  <data name="Error_Default_Message" xml:space="preserve"><value>Une erreur inattendue s'est produite.</value></data>
+  <data name="Error_Default_Desc" xml:space="preserve"><value>L'opération demandée n'a pas pu être terminée. Si cette situation n'est pas permanente, réessayez plus tard. Si cet écran apparaît constamment, informez notre développeur.</value></data>
+  <data name="Btn_Back" xml:space="preserve"><value>← Retour</value></data>
+  <data name="Btn_Home" xml:space="preserve"><value>Accueil</value></data>
+</root>

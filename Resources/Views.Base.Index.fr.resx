@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Consent_Title" xml:space="preserve"><value>Parlons d'une petite chose 👇</value></data>
+  <data name="Consent_Text" xml:space="preserve"><value>Je dois enregistrer certaines informations dans votre navigateur et je dois obtenir ces informations de votre part. &lt;br&gt;&lt;br&gt; Mais ne vous inquiétez pas; j'utiliserai ces informations pour le thème (sombre/clair), le formulaire, etc. Donc ne vous inquiétez pas, vos informations ne seront pas utilisées à des fins commerciales.</value></data>
+  <data name="Consent_Btn_Ok" xml:space="preserve"><value>Compris</value></data>
+  <data name="Consent_Btn_Close" xml:space="preserve"><value>Fermer</value></data>
+  <data name="Toast_Title_Status" xml:space="preserve"><value>Statut</value></data>
+  <data name="Toast_Msg_Default" xml:space="preserve"><value>Message</value></data>
+  <data name="Hero_Greeting" xml:space="preserve"><value>Bonjour, je suis Furkan.</value></data>
+  <data name="Hero_Title_1" xml:space="preserve"><value>Développeur Full-stack</value></data>
+  <data name="Hero_Title_2" xml:space="preserve"><value>résolveur de problèmes</value></data>
+  <data name="Hero_Desc" xml:space="preserve"><value>Je peux développer et améliorer des applications d'entreprise et individuelles basées sur .NET, des intégrations, des services de traitement de données, des tableaux de bord et des panneaux de gestion. Je travaille en me concentrant sur la performance, la sécurité et les besoins réels de l'entreprise. Je suis esthétique mais je remplis aussi le fond, je ne fais pas de travail vide.</value></data>
+  <data name="Hero_Btn_Freelance" xml:space="preserve"><value>Travaillons en Freelance</value></data>
+  <data name="Hero_Btn_Contact" xml:space="preserve"><value>Contactez-moi</value></data>
+  <data name="Hero_Card_Title" xml:space="preserve"><value>Que puis-je faire ?</value></data>
+  <data name="Hero_Card_Desc" xml:space="preserve"><value>Je peux augmenter les performances dans les projets d'entreprise, résoudre les problèmes de goulot d'étranglement, développer et simplifier les couches de journalisation et de sécurité, et développer des projets clé en main du début à la fin.</value></data>
+  <data name="About_Eyebrow" xml:space="preserve"><value>CV</value></data>
+  <data name="About_Title" xml:space="preserve"><value>Qui suis-je ?</value></data>
+  <data name="About_Desc" xml:space="preserve"><value>Je comprends aussi le côté entreprise car j'ai de l'expérience de travail avec des entreprises. Je suis actuellement actif dans mon emploi à temps plein, etc. Processus, approbation, budget, travaux inachevés, situations de panique, délais... J'ai tout vu.</value></data>
+  <data name="About_Card_Text_1" xml:space="preserve"><value>Je travaille principalement sur le back-end (.NET, MSSQL, conception de services) mais je suis aussi à l'aise sur le front-end (Razor, Bootstrap, UI de tableau de bord, structures de composants).</value></data>
+  <data name="About_Card_Text_2" xml:space="preserve"><value>Ce que je préfère : Prendre un problème complexe et le rendre simple, traçable, documentable.</value></data>
+  <data name="About_Card_Text_3" xml:space="preserve"><value>J'interviens là où vous dites « Ça marche mais personne ne veut y toucher parce que tout est connecté ».</value></data>
+  <data name="About_CV_Role_1" xml:space="preserve"><value>Développeur Logiciel Expert Adjoint</value></data>
+  <data name="About_CV_Date_1" xml:space="preserve"><value>2023 - Présent</value></data>
+  <data name="About_CV_Desc_1" xml:space="preserve"><value>Projets .NET d'entreprise, intégration, traitement de données, panneaux personnalisés</value></data>
+  <data name="About_CV_Role_2" xml:space="preserve"><value>Développeur Full-stack (Freelance)</value></data>
+  <data name="About_CV_Date_2" xml:space="preserve"><value>2024 - Présent</value></data>
+  <data name="About_CV_Desc_2" xml:space="preserve"><value>Panneaux personnalisés, rapports de vente, automatisation de campagnes, gestion de projet</value></data>
+  <data name="Skills_Eyebrow" xml:space="preserve"><value>Compétences</value></data>
+  <data name="Skills_Title" xml:space="preserve"><value>Qu'est-ce que j'apporte ?</value></data>
+  <data name="Skills_Desc" xml:space="preserve"><value>Pas des mots, de la production. Voici les domaines que j'utilise quotidiennement.</value></data>
+  <data name="Skill_Level_Expert" xml:space="preserve"><value>Expert</value></data>
+  <data name="Skill_Level_Advanced" xml:space="preserve"><value>Avancé</value></data>
+  <data name="Skill_Level_Surgeon" xml:space="preserve"><value>Chirurgien</value></data>
+  <data name="Skill_Level_Partner" xml:space="preserve"><value>Partenaire</value></data>
+  <data name="Skill_Desc_1" xml:space="preserve"><value>API, Windows Service, Worker Service, tâche de fond, auth, journalisation, mise en cache, site web.</value></data>
+  <data name="Skill_Desc_2" xml:space="preserve"><value>Optimisation des performances, refactorisation SP, analyse d'index, intégrité des données.</value></data>
+  <data name="Skill_Desc_3" xml:space="preserve"><value>Panneaux d'administration, conception de tableau de bord, validation, sécurité.</value></data>
+  <data name="Skill_Desc_4" xml:space="preserve"><value>UI responsive, mode sombre, structure basée sur des composants.</value></data>
+  <data name="Skill_Desc_5" xml:space="preserve"><value>Lire du code hérité, l'arracher, réorganiser. Pas de panique.</value></data>
+  <data name="Skill_Desc_6" xml:space="preserve"><value>Je crée une feuille de route claire pour la question « Que faisons-nous maintenant ? ».</value></data>
+  <data name="Projects_Eyebrow" xml:space="preserve"><value>Portfolio</value></data>
+  <data name="Projects_Title" xml:space="preserve"><value>Mes autres projets</value></data>
+  <data name="Projects_Desc" xml:space="preserve"><value>Autres plateformes que je développe activement et qui sont en ligne.</value></data>
+  <data name="Project_1_Desc" xml:space="preserve"><value>Outil de cryptage de texte basé sur navigateur, rapide et sécurisé. Les données ne sont pas stockées sur le serveur, elles sont cryptées et décryptées instantanément.</value></data>
+  <data name="Project_2_Desc" xml:space="preserve"><value>Système de journalisation pour tous les projets que je développe sous mon toit.</value></data>
+  <data name="Project_Link_Text" xml:space="preserve"><value>Aller sur le site →</value></data>
+  <data name="Project_ComingSoon_Title" xml:space="preserve"><value>Bientôt</value></data>
+  <data name="Project_ComingSoon_Desc" xml:space="preserve"><value>De nouveaux projets sont en route...</value></data>
+  <data name="Pricing_Eyebrow" xml:space="preserve"><value>Prix</value></data>
+  <data name="Pricing_Title" xml:space="preserve"><value>Forfaits Freelance</value></data>
+  <data name="Pricing_Desc" xml:space="preserve"><value>Les prix ci-dessous sont des points de départ. Les offres s'appliquent séparément pour le travail en entreprise.</value></data>
+  <data name="Plan_1_Name" xml:space="preserve"><value>Correction rapide / Support</value></data>
+  <data name="Plan_1_Desc" xml:space="preserve"><value>Bug urgent, petite fonctionnalité, correctif. Je touche au système existant.</value></data>
+  <data name="Plan_Price_Negotiable" xml:space="preserve"><value>Prix négociable.</value></data>
+  <data name="Plan_1_Feature_1" xml:space="preserve"><value>Je rejoins le projet existant</value></data>
+  <data name="Plan_1_Feature_2" xml:space="preserve"><value>1 module / 1 problème</value></data>
+  <data name="Plan_1_Feature_3" xml:space="preserve"><value>Nettoyage de code, explication, journalisation</value></data>
+  <data name="Plan_Btn_Request" xml:space="preserve"><value>Demander</value></data>
+  <data name="Plan_2_Name" xml:space="preserve"><value>Mini Panneau / Tableau de bord</value></data>
+  <data name="Plan_Tag_Popular" xml:space="preserve"><value>Populaire</value></data>
+  <data name="Plan_2_Desc" xml:space="preserve"><value>Panneau de gestion, écran de rapport, flux CRUD. À partir de zéro.</value></data>
+  <data name="Plan_2_Feature_1" xml:space="preserve"><value>Connexion / auth / structure de rôle</value></data>
+  <data name="Plan_2_Feature_2" xml:space="preserve"><value>Intégration MSSQL &amp; EF Core</value></data>
+  <data name="Plan_2_Feature_3" xml:space="preserve"><value>Interface compatible mobile</value></data>
+  <data name="Plan_3_Name" xml:space="preserve"><value>Solution d'entreprise</value></data>
+  <data name="Plan_3_Desc" xml:space="preserve"><value>Analyse de processus, modèle de données, architecture de service, ligne de rapport.</value></data>
+  <data name="Plan_3_Feature_1" xml:space="preserve"><value>Analyse + documentation technique</value></data>
+  <data name="Plan_3_Feature_2" xml:space="preserve"><value>Sécurité, audit, conception de journal</value></data>
+  <data name="Plan_3_Feature_3" xml:space="preserve"><value>Feuille de route &amp; plan de sprint</value></data>
+  <data name="Plan_Btn_Meeting" xml:space="preserve"><value>Fixer une réunion</value></data>
+  <data name="Contact_Eyebrow" xml:space="preserve"><value>Contact</value></data>
+  <data name="Contact_Title" xml:space="preserve"><value>Voulez-vous travailler ensemble ?</value></data>
+  <data name="Contact_Desc" xml:space="preserve"><value>Remplissez le formulaire. Laissez-le tomber comme un e-mail. (Pas de problème si vous n'êtes pas un robot spammeur 😌)</value></data>
+  <data name="Contact_Info_Text_1" xml:space="preserve"><value>Avez-vous une dette technique ? Le système en direct brûle-t-il ? Ou voulez-vous un panneau à partir de zéro ?</value></data>
+  <data name="Contact_Info_Text_2" xml:space="preserve"><value>Écrivez. Expliquez brièvement la situation. Je reviendrai vers vous.</value></data>
+  <data name="Contact_Other_Channels" xml:space="preserve"><value>Autres canaux</value></data>
+  <data name="Form_Label_Name" xml:space="preserve"><value>Prénom Nom</value></data>
+  <data name="Form_Placeholder_Name" xml:space="preserve"><value>Votre nom</value></data>
+  <data name="Form_Label_Email" xml:space="preserve"><value>E-mail</value></data>
+  <data name="Form_Placeholder_Email" xml:space="preserve"><value>exemple@entreprise.com</value></data>
+  <data name="Form_Label_Message" xml:space="preserve"><value>Message / Besoin</value></data>
+  <data name="Form_Placeholder_Message" xml:space="preserve"><value>De quoi avez-vous besoin ? Délai, système, technologie...</value></data>
+  <data name="Form_Hint_Status" xml:space="preserve"><value>Le statut apparaîtra en bas à droite une fois envoyé.</value></data>
+  <data name="Form_Label_Security" xml:space="preserve"><value>Vérification de sécurité</value></data>
+  <data name="Form_Label_Security_Sub" xml:space="preserve"><value>(test bot vs humain)</value></data>
+  <data name="Form_Hint_Internet" xml:space="preserve"><value>Nous devons faire cela parce que l'internet est plein de déchets 🙂</value></data>
+  <data name="Form_Btn_Send" xml:space="preserve"><value>Envoyer</value></data>
+</root>

@@ -7,6 +7,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using MimeKit;
 using System.Net.Mail;
+using Microsoft.AspNetCore.Localization;
 
 namespace furkantural.Controllers
 {
@@ -88,6 +89,18 @@ namespace furkantural.Controllers
         public async Task<IActionResult> Error(ErrorViewModel viewModel)
         {
             return await Task.FromResult(View(viewModel));
+        }
+
+        [HttpPost]
+        public IActionResult SetLanguage(string culture, string returnUrl)
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
+            );
+
+            return LocalRedirect(returnUrl);
         }
         #endregion
 

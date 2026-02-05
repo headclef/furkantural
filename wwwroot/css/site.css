@@ -959,3 +959,35 @@ form .field {
     color: var(--accent);
     font-weight: 600;
 }
+
+/* LANGUAGE SWITCHER */
+.lang-switcher {
+    margin-left: .5rem;
+}
+
+.lang-select {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: .35rem .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: .8rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.lang-select:hover {
+    border-color: var(--accent);
+}
+
+.lang-select option {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    padding: 10px;
+}
+
+[data-theme="light"] .lang-select option {
+    background-color: #ffffff;
+    color: #0f172a;
+}

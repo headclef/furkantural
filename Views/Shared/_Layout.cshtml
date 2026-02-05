@@ -1,5 +1,6 @@
 ﻿@using Microsoft.Extensions.Options
 @inject IOptions<VersionViewModel> versionConfiguration;
+@inject IHtmlLocalizer<SharedResource> SharedLocalizer
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
@@ -20,18 +21,35 @@
             <div class="brand"><a asp-action="Index" asp-controller="Base" style="text-decoration: none;">Furkan<span>Tural</span></a></div>
 
             <nav class="nav-links">
-                <a href="#home">Ana Sayfa</a>
-                <a href="#about">Özgeçmiş</a>
-                <a href="#skills">Yetenekler</a>
-                <a href="#projects">Projeler</a>
-                <a href="#pricing">Fiyatlar</a>
-                <a href="#contact">İletişim</a>
+                <a href="#home">@SharedLocalizer["Navbar_Home"]</a>
+                <a href="#about">@SharedLocalizer["Navbar_About"]</a>
+                <a href="#skills">@SharedLocalizer["Navbar_Skills"]</a>
+                <a href="#projects">@SharedLocalizer["Navbar_Projects"]</a>
+                <a href="#pricing">@SharedLocalizer["Navbar_Pricing"]</a>
+                <a href="#contact">@SharedLocalizer["Navbar_Contact"]</a>
             </nav>
 
-            <button id="themeToggle" class="theme-toggle-btn" aria-label="Tema değiştir">
-                <span id="themeIcon">🌙</span>
-                <span class="toggle-text">Dark</span>
-            </button>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <div class="lang-switcher" style="margin-left: 10px;">
+                    <form asp-controller="Base" asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path@Context.Request.QueryString" method="post">
+                         <select name="culture" onchange="this.form.submit()" class="lang-select">
+                            @{
+                                var requestCulture = Context.Features.Get<Microsoft.AspNetCore.Localization.IRequestCultureFeature>();
+                                var currentCulture = requestCulture?.RequestCulture.UICulture.Name;
+                                var cultures = new[] { "tr", "en", "de", "fr", "ru" };
+                            }
+                            @foreach (var c in cultures)
+                            {
+                                 <option value="@c" selected="@(c == currentCulture ? "selected" : null)">@c.ToUpper()</option>
+                            }
+                        </select>
+                    </form>
+                </div>
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="@SharedLocalizer["Theme_Toggle_Label"]">
+                    <span id="themeIcon">🌙</span>
+                    <span class="toggle-text">@SharedLocalizer["Theme_Dark"]</span>
+                </button>
+            </div>
         </div>
     </header>
     <main>

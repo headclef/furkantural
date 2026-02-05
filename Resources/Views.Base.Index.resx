@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Consent_Title" xml:space="preserve"><value>Küçük bir şey konuşalım 👇</value></data>
+  <data name="Consent_Text" xml:space="preserve"><value>Tarayıcına bazı bilgileri kaydetmem gerekli ve bu bilgileri mecburen senden almak zorundayım. &lt;br&gt;&lt;br&gt; Ama merak etme; Bu bilgileri temayı (dark/light), form vb. gibi şeyler için kullanacağım. Yani bilgilerin ticari vb. amaçlar ile kullanılmayacak, merak etme.</value></data>
+  <data name="Consent_Btn_Ok" xml:space="preserve"><value>Anladım</value></data>
+  <data name="Consent_Btn_Close" xml:space="preserve"><value>Kapat</value></data>
+  <data name="Toast_Title_Status" xml:space="preserve"><value>Durum</value></data>
+  <data name="Toast_Msg_Default" xml:space="preserve"><value>Mesaj</value></data>
+  <data name="Hero_Greeting" xml:space="preserve"><value>Merhaba, ben Furkan.</value></data>
+  <data name="Hero_Title_1" xml:space="preserve"><value>Full-stack geliştirici</value></data>
+  <data name="Hero_Title_2" xml:space="preserve"><value>problem çözücü</value></data>
+  <data name="Hero_Desc" xml:space="preserve"><value>.NET tabanlı kurumsal ve bireysel uygulamalar, entegrasyonlar, veri işleme servisleri dasboard ve yönetim panelleri geliştirebilir ve iyileştirebilirim. Performans, güvenlik ve gerçek iş ihtiyacı odaklı çalışırım. Estetik olurum ama arkasını da doldururum, boş iş yapmam.</value></data>
+  <data name="Hero_Btn_Freelance" xml:space="preserve"><value>Freelance Çalışalım</value></data>
+  <data name="Hero_Btn_Contact" xml:space="preserve"><value>İletişim Kur</value></data>
+  <data name="Hero_Card_Title" xml:space="preserve"><value>Neler yapabilirim?</value></data>
+  <data name="Hero_Card_Desc" xml:space="preserve"><value>Kurumsal projelerde performans artırması yapabilir, darboğaz problemlerini çözebilir, loglama ve güvenlik katmanları geliştirebilir ve sadeleştirebilir, baştan sona anahtar teslim projeler geliştirebilirim.</value></data>
+  <data name="About_Eyebrow" xml:space="preserve"><value>Özgeçmiş</value></data>
+  <data name="About_Title" xml:space="preserve"><value>Kimim?</value></data>
+  <data name="About_Desc" xml:space="preserve"><value>Kurumsal tarafı da anlıyorum çünkü kurumsal firmalar ile de çalışma deneyimine sahibim. Hali hazırda tam zamanlı çalıştışım işimde aktif olarak vb. işlerde yer almaktayım. Süreç, onay, bütçe, yetiştirilemeyen işler, panik durumları, teslim vakitleri... hepsini gördüm.</value></data>
+  <data name="About_Card_Text_1" xml:space="preserve"><value>Back-end ağırlıklı çalışıyorum (.NET, MSSQL, servis tasarımı) ama front-end tarafında da rahatım (Razor, Bootstrap, dashboard UI, component yapıları).</value></data>
+  <data name="About_Card_Text_2" xml:space="preserve"><value>En sevdiğim şey: Karmaşık bir problemi alıp sade, izlenebilir, dökümante edilebilir hale getirmek.</value></data>
+  <data name="About_Card_Text_3" xml:space="preserve"><value>“Şu çalışıyor ama kimse dokunmak istemiyor, çünkü her şey birbirine bağlı” dediğiniz yerde ben giriyorum.</value></data>
+  <data name="About_CV_Role_1" xml:space="preserve"><value>Uzman Yazılımcı Yardımcısı</value></data>
+  <data name="About_CV_Date_1" xml:space="preserve"><value>2023 - Şu An</value></data>
+  <data name="About_CV_Desc_1" xml:space="preserve"><value>Kurumsal .NET projeleri, entegrasyon, veri işleme, özel paneller</value></data>
+  <data name="About_CV_Role_2" xml:space="preserve"><value>Full-stack Geliştirici (Freelance)</value></data>
+  <data name="About_CV_Date_2" xml:space="preserve"><value>2024 - Şu An</value></data>
+  <data name="About_CV_Desc_2" xml:space="preserve"><value>Özel paneller, satış raporlama, kampanya otomasyonu, proje yönetimi</value></data>
+  <data name="Skills_Eyebrow" xml:space="preserve"><value>Yetenekler</value></data>
+  <data name="Skills_Title" xml:space="preserve"><value>Masaya neler koyuyorum?</value></data>
+  <data name="Skills_Desc" xml:space="preserve"><value>Kelime değil, üretim. Aşağıdakiler günlük kullandığım alanlar.</value></data>
+  <data name="Skill_Level_Expert" xml:space="preserve"><value>Uzman</value></data>
+  <data name="Skill_Level_Advanced" xml:space="preserve"><value>İleri</value></data>
+  <data name="Skill_Level_Surgeon" xml:space="preserve"><value>Cerrah</value></data>
+  <data name="Skill_Level_Partner" xml:space="preserve"><value>Partner</value></data>
+  <data name="Skill_Desc_1" xml:space="preserve"><value>API, Windows Service, Worker Service, background task, auth, logging, caching, website.</value></data>
+  <data name="Skill_Desc_2" xml:space="preserve"><value>Performans tuning, SP refactor, index analizi, veri bütünlüğü.</value></data>
+  <data name="Skill_Desc_3" xml:space="preserve"><value>Admin paneller, dashboard tasarımı, validation, security.</value></data>
+  <data name="Skill_Desc_4" xml:space="preserve"><value>Responsive UI, dark mode, component bazlı yapı.</value></data>
+  <data name="Skill_Desc_5" xml:space="preserve"><value>Legacy kodu okumak, koparmak, yeniden düzenlemek. Panik yok.</value></data>
+  <data name="Skill_Desc_6" xml:space="preserve"><value>“Biz ne yapıyoruz şu an?” sorusuna net yol haritası çıkarırım.</value></data>
+  <data name="Projects_Eyebrow" xml:space="preserve"><value>Portfolyo</value></data>
+  <data name="Projects_Title" xml:space="preserve"><value>Diğer Projelerim</value></data>
+  <data name="Projects_Desc" xml:space="preserve"><value>Aktif olarak geliştirdiğim ve yayında olan diğer platformlar.</value></data>
+  <data name="Project_1_Desc" xml:space="preserve"><value>Tarayıcı tabanlı, hızlı ve güvenli metin şifreleme aracı. Veriler sunucuda saklanmaz, anlık şifrelenir ve çözülür.</value></data>
+  <data name="Project_2_Desc" xml:space="preserve"><value>Çatım altında geliştirdiğim tüm projelerin loglama sistemi.</value></data>
+  <data name="Project_Link_Text" xml:space="preserve"><value>Siteye Git →</value></data>
+  <data name="Project_ComingSoon_Title" xml:space="preserve"><value>Yakında</value></data>
+  <data name="Project_ComingSoon_Desc" xml:space="preserve"><value>Yeni projeler yolda...</value></data>
+  <data name="Pricing_Eyebrow" xml:space="preserve"><value>Fiyatlar</value></data>
+  <data name="Pricing_Title" xml:space="preserve"><value>Freelance paketlerim</value></data>
+  <data name="Pricing_Desc" xml:space="preserve"><value>Aşağıdaki ücretler başlangıç noktasıdır. Kurumsal iş için teklif ayrı olur.</value></data>
+  <data name="Plan_1_Name" xml:space="preserve"><value>Hızlı Fix / Destek</value></data>
+  <data name="Plan_1_Desc" xml:space="preserve"><value>Acil bug, ufak feature, hotfix. Mevcut sisteme dokunuyorum.</value></data>
+  <data name="Plan_Price_Negotiable" xml:space="preserve"><value>Fiyatı görüşürüz.</value></data>
+  <data name="Plan_1_Feature_1" xml:space="preserve"><value>Var olan projeye dahil olurum</value></data>
+  <data name="Plan_1_Feature_2" xml:space="preserve"><value>1 modül / 1 sorun</value></data>
+  <data name="Plan_1_Feature_3" xml:space="preserve"><value>Kod temizliği, açıklama, loglama</value></data>
+  <data name="Plan_Btn_Request" xml:space="preserve"><value>Talep Et</value></data>
+  <data name="Plan_2_Name" xml:space="preserve"><value>Mini Panel / Dashboard</value></data>
+  <data name="Plan_Tag_Popular" xml:space="preserve"><value>Popüler</value></data>
+  <data name="Plan_2_Desc" xml:space="preserve"><value>Yönetim paneli, rapor ekranı, CRUD akışı. Sıfırdan.</value></data>
+  <data name="Plan_2_Feature_1" xml:space="preserve"><value>Giriş / yetki / rol yapısı</value></data>
+  <data name="Plan_2_Feature_2" xml:space="preserve"><value>MSSQL &amp; EF Core entegrasyonu</value></data>
+  <data name="Plan_2_Feature_3" xml:space="preserve"><value>Mobil uyumlu arayüz</value></data>
+  <data name="Plan_3_Name" xml:space="preserve"><value>Kurumsal Çözüm</value></data>
+  <data name="Plan_3_Desc" xml:space="preserve"><value>Süreç analizi, veri modeli, servis mimarisi, raporlama hattı.</value></data>
+  <data name="Plan_3_Feature_1" xml:space="preserve"><value>Analiz + teknik dokümantasyon</value></data>
+  <data name="Plan_3_Feature_2" xml:space="preserve"><value>Security, audit, log tasarımı</value></data>
+  <data name="Plan_3_Feature_3" xml:space="preserve"><value>Yol haritası &amp; sprint planı</value></data>
+  <data name="Plan_Btn_Meeting" xml:space="preserve"><value>Toplantı Ayarla</value></data>
+  <data name="Contact_Eyebrow" xml:space="preserve"><value>İletişim</value></data>
+  <data name="Contact_Title" xml:space="preserve"><value>Birlikte çalışmak ister misin?</value></data>
+  <data name="Contact_Desc" xml:space="preserve"><value>Formu doldur. Mail olarak düşsün. (Spam bot değilsen sorun yok 😌)</value></data>
+  <data name="Contact_Info_Text_1" xml:space="preserve"><value>Teknik borcun mu var? Canlı sistem mi yanıyor? Ya da sıfırdan panel mi istiyorsun?</value></data>
+  <data name="Contact_Info_Text_2" xml:space="preserve"><value>Yaz. Durumu kısaca anlat. Ben dönerim.</value></data>
+  <data name="Contact_Other_Channels" xml:space="preserve"><value>Diğer Kanallar</value></data>
+  <data name="Form_Label_Name" xml:space="preserve"><value>Ad Soyad</value></data>
+  <data name="Form_Placeholder_Name" xml:space="preserve"><value>Adın</value></data>
+  <data name="Form_Label_Email" xml:space="preserve"><value>E-posta</value></data>
+  <data name="Form_Placeholder_Email" xml:space="preserve"><value>ornek@firma.com</value></data>
+  <data name="Form_Label_Message" xml:space="preserve"><value>Mesajın / İhtiyacın</value></data>
+  <data name="Form_Placeholder_Message" xml:space="preserve"><value>Neye ihtiyacın var? Deadline, sistem, teknoloji...</value></data>
+  <data name="Form_Hint_Status" xml:space="preserve"><value>Gönderince sağ altta durum çıkacak.</value></data>
+  <data name="Form_Label_Security" xml:space="preserve"><value>Güvenlik Doğrulaması</value></data>
+  <data name="Form_Label_Security_Sub" xml:space="preserve"><value>(bot musun insan mısın testi)</value></data>
+  <data name="Form_Hint_Internet" xml:space="preserve"><value>Bunu yapmak zorundayız çünkü internet çöplük dolu 🙂</value></data>
+  <data name="Form_Btn_Send" xml:space="preserve"><value>Gönder</value></data>
+</root>

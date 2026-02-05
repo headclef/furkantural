@@ -31,7 +31,11 @@ builder.Services.AddServices();
 builder.Services.AddHttpClient();
 
 // Tm controller'lar iin varsaylan yetkilendirme politikas belirle
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization();
+
+// Localization
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 #endregion
 
 var app = builder.Build();
@@ -67,6 +71,15 @@ app.Use(async (ctx, next) =>
         await next();
     }
 });
+
+// Localization Middleware
+var supportedCultures = new[] { "tr", "en", "de", "fr", "ru" };
+var localizationOptions = new RequestLocalizationOptions()
+    .SetDefaultCulture("tr")
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+
+app.UseRequestLocalization(localizationOptions);
 
 // HTTP isteklerini HTTPS'e ynlendir
 app.UseHttpsRedirection();

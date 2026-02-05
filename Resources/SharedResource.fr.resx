@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Navbar_Home" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="Navbar_About" xml:space="preserve">
+    <value>À propos</value>
+  </data>
+  <data name="Navbar_Skills" xml:space="preserve">
+    <value>Compétences</value>
+  </data>
+  <data name="Navbar_Projects" xml:space="preserve">
+    <value>Projets</value>
+  </data>
+  <data name="Navbar_Pricing" xml:space="preserve">
+    <value>Tarifs</value>
+  </data>
+  <data name="Navbar_Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Theme_Toggle_Label" xml:space="preserve">
+    <value>Changer de thème</value>
+  </data>
+  <data name="Theme_Dark" xml:space="preserve">
+    <value>Sombre</value>
+  </data>
+  <data name="Theme_Light" xml:space="preserve">
+    <value>Clair</value>
+  </data>
+</root>
