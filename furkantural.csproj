@@ -3,33 +3,15 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+  		<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+    	<RootNamespace>furkantural</RootNamespace>
+    	<AssemblyName>furkantural</AssemblyName>
 	</PropertyGroup>
+
 	<ItemGroup>
-	  <Compile Remove="Context\**" />
-	  <Compile Remove="Parameters\**" />
-	  <Compile Remove="Repositories\**" />
-	  <Compile Remove="ViewComponents\**" />
-
-	  <Compile Remove="wwwroot\webfonts\**" />
-	  <Content Remove="Context\**" />
-	  <Content Remove="Parameters\**" />
-	  <Content Remove="Repositories\**" />
-	  <Content Remove="ViewComponents\**" />
-
-	  <Content Remove="wwwroot\webfonts\**" />
-	  <EmbeddedResource Remove="Context\**" />
-	  <EmbeddedResource Remove="Parameters\**" />
-	  <EmbeddedResource Remove="Repositories\**" />
-	  <EmbeddedResource Remove="ViewComponents\**" />
-
-	  <EmbeddedResource Remove="wwwroot\webfonts\**" />
-	  <None Remove="Context\**" />
-	  <None Remove="Parameters\**" />
-	  <None Remove="Repositories\**" />
-	  <None Remove="ViewComponents\**" />
-
-	  <None Remove="wwwroot\webfonts\**" />
+	  <EmbeddedResource Include="Resources\**\*.resx" />
 	</ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="MailKit" Version="4.14.1" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
@@ -43,9 +25,5 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="ErrorLogs\" />
-	  <Folder Include="InformationLogs\" />
 	</ItemGroup>
 </Project>

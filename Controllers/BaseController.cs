@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
-using MimeKit;
-using System.Net.Mail;
 using Microsoft.AspNetCore.Localization;
 
 namespace furkantural.Controllers

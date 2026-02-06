@@ -1,54 +1,54 @@
-﻿using furkantural.Models;
+﻿using furkantural.Data;
+using furkantural.Models;
 using furkantural.Registrations;
 using Microsoft.AspNetCore.Antiforgery;
-using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
-using furkantural.Data;
+using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
 #region Container Injections
-// EmailSettings ayarlar iin gerekli modelin kayddr.
+// Smtp 'yi ayarla
 builder.Services.Configure<SmtpViewModel>(builder.Configuration.GetSection("Smtp"));
 
-// EmailSettings ayarlar iin gerekli modelin kayddr.
+// Allower 'ı ayarla
 builder.Services.Configure<AllowerViewModel>(builder.Configuration.GetSection("Allower"));
 
-// CloudFlare Turnstile ayarlar iin gerekli modelin kayddr.
+// Turnstile 'ı ayarla
 builder.Services.Configure<TurnstileViewModel>(builder.Configuration.GetSection("Turnstile"));
 
-// Versiyon ynetimi iin model doldurumu
+// Versiyon yönetimi için model doldur
 builder.Services.Configure<VersionViewModel>(builder.Configuration.GetSection("AppVersion"));
 
-// Veritabanı bağlantısı
+// Veritabanına bağlan
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// AddServices metodunu ararak AutoMapper ve dier servisleri ekle.
+// AddServices metodunu arayarak AutoMapper ve diğer servisleri ekle
 builder.Services.AddServices();
 
-// HttpClient kayt iin gereklidir.
+// HttpClient kaydı
 builder.Services.AddHttpClient();
 
-// Tm controller'lar iin varsaylan yetkilendirme politikas belirle
+// Controller ve View kaydı
 builder.Services.AddControllersWithViews()
     .AddViewLocalization();
 
-// Localization
+// Dil desteği
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 #endregion
 
 var app = builder.Build();
 
 #region App Configurations
-// Proxy 'leri ne kar.
+// Proxy 'leri belirle
 var forwardedOptions = new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
 };
 app.UseForwardedHeaders(forwardedOptions);
 
-// Hatalar her ortamda hata sayfasna ynlenirmek iin gereklidir.
+// Hatalar her ortamda hata sayfasna yönlendir
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Base/Error");
@@ -59,7 +59,6 @@ else
     app.UseDeveloperExceptionPage();
 }
 app.UseStatusCodePagesWithReExecute("/Base/Error/{0}");
-
 app.Use(async (ctx, next) =>
 {
     try { await next(); }
@@ -72,29 +71,28 @@ app.Use(async (ctx, next) =>
     }
 });
 
-// Localization Middleware
+// Dil desteği
 var supportedCultures = new[] { "tr", "en", "de", "fr", "ru" };
 var localizationOptions = new RequestLocalizationOptions()
     .SetDefaultCulture("tr")
     .AddSupportedCultures(supportedCultures)
     .AddSupportedUICultures(supportedCultures);
-
 app.UseRequestLocalization(localizationOptions);
 
-// HTTP isteklerini HTTPS'e ynlendir
+// HTTP isteklerini HTTPS'e yönlendir
 app.UseHttpsRedirection();
 
-// Statik dosyalarn sunulmasn etkinletir
+// Statik dosyaların sunulmasını etkinleştir
 app.UseStaticFiles();
 
 // Rota belirlemeyi etkinletir
 app.UseRouting();
 
-// Varsaylan controller rotasn belirle
+// Varsayılan controller rotasını belirle
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Base}/{action=Index}/{id?}");
 #endregion
 
-// Uygulamay altr
+// Uygulamayı çalıştır
 app.Run();
