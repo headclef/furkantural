@@ -1,18 +1,75 @@
 ﻿@using Microsoft.Extensions.Options
 @inject IOptions<VersionViewModel> versionConfiguration;
 @inject IHtmlLocalizer<SharedResource> SharedLocalizer
+@{
+    var pageTitle = ViewData["Title"]?.ToString() ?? "Full-Stack Developer";
+    var siteTitle = "Furkan Tural";
+    var fullTitle = $"{pageTitle} | {siteTitle}";
+    var description = "Furkan Tural - Full-Stack Developer, Backend Developer, Website Developer. Professional portfolio showcasing projects and skills.";
+    var siteUrl = "https://furkantural.com";
+    var currentUrl = $"{siteUrl}{Context.Request.Path}";
+}
 <!DOCTYPE html>
 <html lang="tr" data-theme="dark">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Furkan Tural</title>
-    <!-- META DATAS -->
-    <meta charset="utf-8" />
-    <meta name="description" content="Website Developer, Backend Developer, Full-Stack Developer, Developer, Website, Backend, Full-Stack" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>@fullTitle</title>
+    <meta name="title" content="@fullTitle" />
+    <meta name="description" content="@description" />
+    <meta name="keywords" content="Furkan Tural, Full-Stack Developer, Backend Developer, Website Developer, Portfolio, .NET Developer" />
+    <meta name="author" content="Furkan Tural" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="@currentUrl" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@currentUrl" />
+    <meta property="og:title" content="@fullTitle" />
+    <meta property="og:description" content="@description" />
+    <meta property="og:site_name" content="@siteTitle" />
+    <meta property="og:locale" content="tr_TR" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="@currentUrl" />
+    <meta property="twitter:title" content="@fullTitle" />
+    <meta property="twitter:description" content="@description" />
+    
+    <!-- Social Profile Links -->
+    <meta property="og:see_also" content="https://www.linkedin.com/in/furkantural" />
+    <meta property="og:see_also" content="https://github.com/headclef" />
+    <meta property="og:see_also" content="https://www.instagram.com/headclef" />
+    <meta property="og:see_also" content="https://www.facebook.com/headcleFT" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "Person",
+        "name": "Furkan Tural",
+        "url": "https://furkantural.com",
+        "jobTitle": "Full-Stack Developer",
+        "description": "@description",
+        "sameAs": [
+            "https://www.linkedin.com/in/furkantural",
+            "https://github.com/headclef",
+            "https://www.instagram.com/headclef",
+            "https://www.facebook.com/headcleFT",
+            "https://www.hackerrank.com/profile/elbisetakim"
+        ]
+    }
+    </script>
 </head>
+
 <body>
     <div id="canvas-container"></div>
     @await RenderSectionAsync("Styles", required: false)

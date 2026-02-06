@@ -1,0 +1,8 @@
+# robots.txt for Furkan Tural Portfolio
+# https://furkantural.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://furkantural.com/sitemap.xml
