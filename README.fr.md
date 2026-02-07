@@ -4,7 +4,7 @@ Un site web portfolio personnel moderne et multilingue construit avec **ASP.NET 
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
 ![Licence](https://img.shields.io/badge/Licence-MIT-green)
-![Version](https://img.shields.io/badge/Version-1.2.8-blue)
+![Version](https://img.shields.io/badge/Version-1.2.9-blue)
 
 🌐 **Langues**: [Türkçe](README.md) | [English](README.en.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
@@ -87,7 +87,7 @@ Un site web portfolio personnel moderne et multilingue construit avec **ASP.NET 
 
 ## 📝 Licence
 
-Licence MIT - voir [LICENSE](LICENSE) pour les détails.
+Licence MIT - voir [LICENSE](License) pour les détails.
 
 ---
 
