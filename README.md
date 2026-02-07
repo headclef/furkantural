@@ -4,7 +4,7 @@
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
 ![Lisans](https://img.shields.io/badge/Lisans-MIT-green)
-![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-1.2.7-blue)
+![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-1.2.8-blue)
 
 🌐 **Dil Seçenekleri**: [English](README.en.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Русский](README.ru.md)
 

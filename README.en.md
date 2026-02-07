@@ -4,7 +4,7 @@ A modern, multi-language personal portfolio website built with **ASP.NET Core 8 
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Version](https://img.shields.io/badge/Version-1.2.7-blue)
+![Version](https://img.shields.io/badge/Version-1.2.8-blue)
 
 🌐 **Languages**: [Türkçe](README.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Русский](README.ru.md)
 
