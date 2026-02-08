@@ -86,4 +86,12 @@
   <data name="Form_Label_Security_Sub" xml:space="preserve"><value>(тест бот против человека)</value></data>
   <data name="Form_Hint_Internet" xml:space="preserve"><value>Мы должны это делать, потому что интернет полон мусора 🙂</value></data>
   <data name="Form_Btn_Send" xml:space="preserve"><value>Отправить</value></data>
+  <data name="Songs_Eyebrow" xml:space="preserve"><value>Музыка</value></data>
+  <data name="Songs_Title" xml:space="preserve"><value>Мои Песни</value></data>
+  <data name="Songs_Desc" xml:space="preserve"><value>Песни, выпущенные через DistroKid. Доступны на всех крупных платформах.</value></data>
+  <data name="Song_Credit_Singer" xml:space="preserve"><value>Исполнитель &amp; Автор</value></data>
+  <data name="Song_Credit_Producer" xml:space="preserve"><value>Продюсер</value></data>
+  <data name="Song_ComingSoon_Title" xml:space="preserve"><value>Скоро</value></data>
+  <data name="Song_ComingSoon_Desc" xml:space="preserve"><value>Новые песни на подходе...</value></data>
 </root>
+

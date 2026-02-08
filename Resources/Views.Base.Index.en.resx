@@ -86,4 +86,12 @@
   <data name="Form_Label_Security_Sub" xml:space="preserve"><value>(bot vs human test)</value></data>
   <data name="Form_Hint_Internet" xml:space="preserve"><value>We have to do this because the internet is full of garbage 🙂</value></data>
   <data name="Form_Btn_Send" xml:space="preserve"><value>Send</value></data>
+  <data name="Songs_Eyebrow" xml:space="preserve"><value>Music</value></data>
+  <data name="Songs_Title" xml:space="preserve"><value>My Songs</value></data>
+  <data name="Songs_Desc" xml:space="preserve"><value>Songs I've released through DistroKid. Available on all major platforms.</value></data>
+  <data name="Song_Credit_Singer" xml:space="preserve"><value>Singer &amp; Songwriter</value></data>
+  <data name="Song_Credit_Producer" xml:space="preserve"><value>Producer</value></data>
+  <data name="Song_ComingSoon_Title" xml:space="preserve"><value>Soon</value></data>
+  <data name="Song_ComingSoon_Desc" xml:space="preserve"><value>New songs on the way...</value></data>
 </root>
+

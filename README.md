@@ -4,7 +4,7 @@
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
 ![Lisans](https://img.shields.io/badge/Lisans-MIT-green)
-![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-1.2.9-blue)
+![Sürüm](https://img.shields.io/badge/S%C3%BCr%C3%BCm-1.3.0-blue)
 
 🌐 **Dil Seçenekleri**: [English](README.en.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Русский](README.ru.md)
 
@@ -40,6 +40,12 @@
 - **Entity Framework Core** ile veritabanı destekli loglama
 - Log seviyeleri: Bilgi, Başarı, Uyarı, Hata
 - IP adresi takibi (Cloudflare desteği ile)
+
+### 🎵 Müzik Vitrini
+- DistroKid üzerinden yayınlanan şarkılar için özel bölüm
+- Spotify ve YouTube Music entegrasyonu
+- Şarkıcı, söz yazarı ve prodüktör bilgileri
+- Albüm kapağı görselleri ile modern kart tasarımı
 
 ---
 
@@ -198,7 +204,7 @@ Yeni çeviri eklemek için:
 
 | Rota | Açıklama |
 |------|----------|
-| `/` | Ana portfolyo sayfası: Hero, Hakkımda, Yetenekler, Projeler, Fiyatlandırma, İletişim |
+| `/` | Ana portfolyo sayfası: Hero, Hakkımda, Yetenekler, Projeler, Şarkılar, Fiyatlandırma, İletişim |
 | `/Base/Error/{statusCode}` | Özel hata sayfaları (404, 500, vb.) |
 
 ---

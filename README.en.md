@@ -4,7 +4,7 @@ A modern, multi-language personal portfolio website built with **ASP.NET Core 8 
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Version](https://img.shields.io/badge/Version-1.2.9-blue)
+![Version](https://img.shields.io/badge/Version-1.3.0-blue)
 
 🌐 **Languages**: [Türkçe](README.md) | [Deutsch](README.de.md) | [Français](README.fr.md) | [Русский](README.ru.md)
 
@@ -40,6 +40,12 @@ A modern, multi-language personal portfolio website built with **ASP.NET Core 8 
 - Database-backed logging via **Entity Framework Core**
 - Log levels: Info, Success, Warning, Error
 - IP address tracking (with Cloudflare support)
+
+### 🎵 Music Showcase
+- Dedicated section for songs released via DistroKid
+- Spotify and YouTube Music integration
+- Singer, songwriter, and producer credits
+- Modern card design with album cover artwork
 
 ---
 

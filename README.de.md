@@ -4,7 +4,7 @@ Eine moderne, mehrsprachige persönliche Portfolio-Website, entwickelt mit **ASP
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
 ![Lizenz](https://img.shields.io/badge/Lizenz-MIT-green)
-![Version](https://img.shields.io/badge/Version-1.2.9-blue)
+![Version](https://img.shields.io/badge/Version-1.3.0-blue)
 
 🌐 **Sprachen**: [Türkçe](README.md) | [English](README.en.md) | [Français](README.fr.md) | [Русский](README.ru.md)
 
@@ -40,6 +40,12 @@ Eine moderne, mehrsprachige persönliche Portfolio-Website, entwickelt mit **ASP
 - Datenbankgestützte Protokollierung über **Entity Framework Core**
 - Log-Level: Info, Erfolg, Warnung, Fehler
 - IP-Adressverfolgung (mit Cloudflare-Unterstützung)
+
+### 🎵 Musik-Showcase
+- Dedizierter Bereich für über DistroKid veröffentlichte Songs
+- Spotify und YouTube Music Integration
+- Sänger, Songwriter und Produzenten-Credits
+- Modernes Card-Design mit Albumcover-Artwork
 
 ---
 

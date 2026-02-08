@@ -4,7 +4,7 @@ Un site web portfolio personnel moderne et multilingue construit avec **ASP.NET 
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
 ![Licence](https://img.shields.io/badge/Licence-MIT-green)
-![Version](https://img.shields.io/badge/Version-1.2.9-blue)
+![Version](https://img.shields.io/badge/Version-1.3.0-blue)
 
 🌐 **Langues**: [Türkçe](README.md) | [English](README.en.md) | [Deutsch](README.de.md) | [Русский](README.ru.md)
 
@@ -40,6 +40,12 @@ Un site web portfolio personnel moderne et multilingue construit avec **ASP.NET 
 - Journalisation basée sur la base de données via **Entity Framework Core**
 - Niveaux de log: Info, Succès, Avertissement, Erreur
 - Suivi d'adresse IP (avec support Cloudflare)
+
+### 🎵 Vitrine Musicale
+- Section dédiée aux chansons publiées via DistroKid
+- Intégration Spotify et YouTube Music
+- Crédits chanteur, auteur et producteur
+- Design moderne en carte avec pochette d'album
 
 ---
 

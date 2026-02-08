@@ -86,4 +86,12 @@
   <data name="Form_Label_Security_Sub" xml:space="preserve"><value>(bot musun insan mısın testi)</value></data>
   <data name="Form_Hint_Internet" xml:space="preserve"><value>Bunu yapmak zorundayız çünkü internet çöplük dolu 🙂</value></data>
   <data name="Form_Btn_Send" xml:space="preserve"><value>Gönder</value></data>
+  <data name="Songs_Eyebrow" xml:space="preserve"><value>Müzik</value></data>
+  <data name="Songs_Title" xml:space="preserve"><value>Şarkılarım</value></data>
+  <data name="Songs_Desc" xml:space="preserve"><value>DistroKid aracılığıyla yayınladığım şarkılar. Tüm büyük platformlarda dinleyebilirsiniz.</value></data>
+  <data name="Song_Credit_Singer" xml:space="preserve"><value>Şarkıcı &amp; Söz Yazarı</value></data>
+  <data name="Song_Credit_Producer" xml:space="preserve"><value>Prodüktör</value></data>
+  <data name="Song_ComingSoon_Title" xml:space="preserve"><value>Yakında</value></data>
+  <data name="Song_ComingSoon_Desc" xml:space="preserve"><value>Yeni şarkılar yolda...</value></data>
 </root>
+

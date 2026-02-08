@@ -4,7 +4,7 @@
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=flat&logo=dotnet)
 ![Лицензия](https://img.shields.io/badge/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-MIT-green)
-![Версия](https://img.shields.io/badge/%D0%92%D0%B5%D1%80%D1%81%D0%B8%D1%8F-1.2.9-blue)
+![Версия](https://img.shields.io/badge/%D0%92%D0%B5%D1%80%D1%81%D0%B8%D1%8F-1.3.0-blue)
 
 🌐 **Языки**: [Türkçe](README.md) | [English](README.en.md) | [Deutsch](README.de.md) | [Français](README.fr.md)
 
@@ -40,6 +40,12 @@
 - Логирование в базу данных через **Entity Framework Core**
 - Уровни логов: Инфо, Успех, Предупреждение, Ошибка
 - Отслеживание IP-адресов (с поддержкой Cloudflare)
+
+### 🎵 Музыкальная Витрина
+- Специальный раздел для песен, выпущенных через DistroKid
+- Интеграция Spotify и YouTube Music
+- Информация об исполнителе, авторе и продюсере
+- Современный дизайн карточек с обложкой альбома
 
 ---
 

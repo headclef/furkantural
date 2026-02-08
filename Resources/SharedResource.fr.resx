@@ -12,6 +12,9 @@
   <data name="Navbar_Projects" xml:space="preserve">
     <value>Projets</value>
   </data>
+  <data name="Navbar_Songs" xml:space="preserve">
+    <value>Chansons</value>
+  </data>
   <data name="Navbar_Pricing" xml:space="preserve">
     <value>Tarifs</value>
   </data>
