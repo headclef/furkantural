@@ -3,6 +3,7 @@ using furkantural.Application.Repositories;
 using furkantural.Application.Services.Abstract;
 using furkantural.Application.Wrappers;
 using furkantural.Infrastructure.Repositories;
+using furkantural.Infrastructure.Security;
 using furkantural.Infrastructure.Services.Concrete;
 using FluentValidation;
 using MediatR;
@@ -23,6 +24,14 @@ namespace furkantural.Infrastructure.Registrations
             // Repositories
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            // Encryption
+            var masterKey = Environment.GetEnvironmentVariable("FT_ENCRYPTION_KEY");
+            if (!string.IsNullOrWhiteSpace(masterKey))
+            {
+                var encryptionService = new EncryptionService(masterKey);
+                services.AddSingleton<IEncryptionService>(encryptionService);
+            }
 
             // Services
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();

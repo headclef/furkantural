@@ -2,10 +2,14 @@
 using furkantural.Application.Models;
 using furkantural.Infrastructure.Registrations;
 using furkantural.Infrastructure.Middleware;
+using furkantural.Infrastructure.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Decrypt encrypted configuration values (requires FT_ENCRYPTION_KEY env var)
+builder.Configuration.DecryptEncryptedValues();
 
 #region Container Injections
 // Smtp 'yi ayarla
