@@ -7,7 +7,7 @@
   		<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
     	<RootNamespace>furkantural</RootNamespace>
     	<AssemblyName>furkantural</AssemblyName>
-		<DefaultItemExcludes>$(DefaultItemExcludes);furkantural.Domain\**;furkantural.Application\**;furkantural.Infrastructure\**</DefaultItemExcludes>
+		<DefaultItemExcludes>$(DefaultItemExcludes);furkantural.Domain\**;furkantural.Application\**;furkantural.Infrastructure\**;furkantural.Application.Tests\**;furkantural.Infrastructure.Tests\**</DefaultItemExcludes>
 	</PropertyGroup>
 
 	<ItemGroup>
