@@ -1,6 +1,6 @@
-﻿using furkantural.Data;
-using furkantural.Models;
-using furkantural.Registrations;
+﻿using furkantural.Infrastructure.Data;
+using furkantural.Application.Models;
+using furkantural.Infrastructure.Registrations;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -9,16 +9,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 #region Container Injections
 // Smtp 'yi ayarla
-builder.Services.Configure<SmtpViewModel>(builder.Configuration.GetSection("Smtp"));
+builder.Services.Configure<SmtpOptions>(builder.Configuration.GetSection("Smtp"));
 
 // Allower 'ı ayarla
-builder.Services.Configure<AllowerViewModel>(builder.Configuration.GetSection("Allower"));
+builder.Services.Configure<AllowerOptions>(builder.Configuration.GetSection("Allower"));
 
 // Turnstile 'ı ayarla
-builder.Services.Configure<TurnstileViewModel>(builder.Configuration.GetSection("Turnstile"));
+builder.Services.Configure<TurnstileOptions>(builder.Configuration.GetSection("Turnstile"));
 
 // Versiyon yönetimi için model doldur
-builder.Services.Configure<VersionViewModel>(builder.Configuration.GetSection("AppVersion"));
+builder.Services.Configure<VersionOptions>(builder.Configuration.GetSection("AppVersion"));
 
 // Veritabanına bağlan
 builder.Services.AddDbContext<AppDbContext>(options =>

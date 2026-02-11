@@ -1,6 +1,7 @@
 using furkantural.Models;
-using furkantural.Services.Abstract;
-using furkantural.Services.Concrete;
+using furkantural.Application.Models;
+using furkantural.Application.Services.Abstract;
+using furkantural.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -11,14 +12,14 @@ namespace furkantural.Controllers
 {
     [AllowAnonymous]
     public class BaseController (
-        IOptions<SmtpViewModel> smtpOptions,
+        IOptions<SmtpOptions> smtpOptions,
         ILogService logService,
         IEmailService emailService,
         ITurnstileService turnstileService
     ): Controller
     {
         #region Properties
-        private readonly SmtpViewModel _smtpOptions = smtpOptions.Value;
+        private readonly SmtpOptions _smtpOptions = smtpOptions.Value;
         private readonly ILogService _logService = logService;
         private readonly IEmailService _emailService = emailService;
         private readonly ITurnstileService _turnstileService = turnstileService;
@@ -33,7 +34,7 @@ namespace furkantural.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SendMail(MailViewModel viewModel)
+        public async Task<IActionResult> SendMail(ContactFormRequest viewModel)
         {
             // Pre-validate
             if (!ModelState.IsValid) { return await Task.FromResult(BadRequest("Formda oynamalar yapmayalım, bu senin iyiliğin için.")); }

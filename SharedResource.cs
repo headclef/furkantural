@@ -1,5 +1,3 @@
 namespace furkantural;
 
-public class SharedResource
-{
-}
+public class SharedResource { }

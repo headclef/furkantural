@@ -1,5 +1,4 @@
-﻿@using Microsoft.Extensions.Options
-@inject IOptions<VersionViewModel> versionConfiguration;
+﻿@inject IOptions<VersionOptions> versionConfiguration;
 @inject IHtmlLocalizer<SharedResource> SharedLocalizer
 @{
     var pageTitle = ViewData["Title"]?.ToString() ?? "Full-Stack Developer";
