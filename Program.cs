@@ -1,7 +1,7 @@
 ﻿using furkantural.Infrastructure.Data;
 using furkantural.Application.Models;
 using furkantural.Infrastructure.Registrations;
-using Microsoft.AspNetCore.Antiforgery;
+using furkantural.Infrastructure.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.HttpOverrides;
 
@@ -51,25 +51,10 @@ app.UseForwardedHeaders(forwardedOptions);
 // Hatalar her ortamda hata sayfasna yönlendir
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Base/Error");
     app.UseHsts();
 }
-else
-{
-    app.UseDeveloperExceptionPage();
-}
+app.UseMiddleware<GlobalExceptionMiddleware>();
 app.UseStatusCodePagesWithReExecute("/Base/Error/{0}");
-app.Use(async (ctx, next) =>
-{
-    try { await next(); }
-    catch (AntiforgeryValidationException)
-    {
-        ctx.Response.Clear();
-        ctx.Response.StatusCode = 400;
-        ctx.Request.Path = "/Base/Error/Code=400&Type=Bad%20Request&Message=Var%20bir%20sknt&Detail=Galiba%20bir%20problem%20olutu%20istersen%20tekrar%20dene%20heh?";
-        await next();
-    }
-});
 
 // Dil desteği
 var supportedCultures = new[] { "tr", "en", "de", "fr", "ru" };
