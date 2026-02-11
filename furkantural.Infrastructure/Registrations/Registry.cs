@@ -15,6 +15,7 @@ namespace furkantural.Infrastructure.Registrations
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             // Services
+            services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
             services.AddSingleton<IEmailRateLimiter, InMemoryEmailRateLimiter>();
             services.AddScoped<IEmailService, EmailService>();
             services.AddHttpContextAccessor();

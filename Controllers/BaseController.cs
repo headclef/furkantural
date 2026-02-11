@@ -15,7 +15,8 @@ namespace furkantural.Controllers
         IOptions<SmtpOptions> smtpOptions,
         ILogService logService,
         IEmailService emailService,
-        ITurnstileService turnstileService
+        ITurnstileService turnstileService,
+        IDateTimeProvider dateTime
     ): Controller
     {
         #region Properties
@@ -23,6 +24,7 @@ namespace furkantural.Controllers
         private readonly ILogService _logService = logService;
         private readonly IEmailService _emailService = emailService;
         private readonly ITurnstileService _turnstileService = turnstileService;
+        private readonly IDateTimeProvider _dateTime = dateTime;
         #endregion
 
         #region Methods
@@ -56,7 +58,7 @@ namespace furkantural.Controllers
                 { "NameSurname", viewModel.NameSurname },
                 { "Email", viewModel.Email },
                 { "MessageNeed", viewModel.MessageNeed },
-                { "SendTime", DateTime.Now.ToString("yyyy.MM.dd HH:mm") },
+                { "SendTime", _dateTime.Now.ToString("yyyy.MM.dd HH:mm") },
                 { "IpAddress", await GetClientIp(HttpContext) }
             };
 

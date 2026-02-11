@@ -1,11 +1,12 @@
 using furkantural.Application.Repositories;
+using furkantural.Application.Services.Abstract;
 using furkantural.Domain.Entities.Common;
 using furkantural.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 namespace furkantural.Infrastructure.Repositories;
 
-public class Repository<T>(AppDbContext context) : IRepository<T> where T : BaseEntity
+public class Repository<T>(AppDbContext context, IDateTimeProvider dateTime) : IRepository<T> where T : BaseEntity
 {
     protected readonly DbSet<T> _dbSet = context.Set<T>();
 
@@ -19,11 +20,14 @@ public class Repository<T>(AppDbContext context) : IRepository<T> where T : Base
         => await _dbSet.Where(e => !e.IsDeleted).Where(predicate).ToListAsync();
 
     public async Task AddAsync(T entity)
-        => await _dbSet.AddAsync(entity);
+    {
+        entity.CreatedAt = dateTime.Now;
+        await _dbSet.AddAsync(entity);
+    }
 
     public void Update(T entity)
     {
-        entity.UpdatedAt = DateTime.UtcNow.AddHours(3);
+        entity.UpdatedAt = dateTime.Now;
         _dbSet.Update(entity);
     }
 
@@ -34,7 +38,7 @@ public class Repository<T>(AppDbContext context) : IRepository<T> where T : Base
     {
         entity.IsDeleted = true;
         entity.IsActive = false;
-        entity.DeletedAt = DateTime.UtcNow.AddHours(3);
+        entity.DeletedAt = dateTime.Now;
         _dbSet.Update(entity);
     }
 }

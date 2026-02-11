@@ -5,7 +5,8 @@ using Microsoft.Extensions.Options;
 namespace furkantural.Infrastructure.Services.Concrete
 {
     public class InMemoryEmailRateLimiter (
-        IOptions<SmtpOptions> options
+        IOptions<SmtpOptions> options,
+        IDateTimeProvider dateTime
     ) : IEmailRateLimiter
     {
         private readonly object _lockObj = new();
@@ -16,7 +17,7 @@ namespace furkantural.Infrastructure.Services.Concrete
         {
             lock (_lockObj)
             {
-                var now = DateTime.UtcNow;
+                var now = dateTime.UtcNow;
                 var oneHourAgo = now.AddHours(-1);
 
                 while (_sendHistory.Count > 0 && _sendHistory.Peek() < oneHourAgo)

@@ -8,6 +8,7 @@ namespace furkantural.Infrastructure.Services.Concrete;
 public class LogService(
     IRepository<Log> logRepository,
     IUnitOfWork unitOfWork,
+    IDateTimeProvider dateTime,
     IHttpContextAccessor httpContextAccessor
 ) : ILogService
 {
@@ -23,7 +24,7 @@ public class LogService(
                 Level = level,
                 Message = message,
                 Detail = detail,
-                Date = DateTime.Now,
+                Date = dateTime.Now,
                 IpAddress = GetIpAddress(),
                 Path = GetPath()
             };

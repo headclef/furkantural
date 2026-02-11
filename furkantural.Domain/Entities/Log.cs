@@ -7,7 +7,7 @@ public class Log : BaseEntity
     [Required]
     [MaxLength(50)]
     public string Project { get; set; } = string.Empty;
-    public DateTime Date { get; set; } = DateTime.Now;
+    public DateTime Date { get; set; }
     [Required]
     [MaxLength(20)]
     public string Level { get; set; } = "Info";
