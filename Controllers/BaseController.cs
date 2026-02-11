@@ -1,30 +1,20 @@
 using furkantural.Models;
-using furkantural.Application.Models;
-using furkantural.Application.Services.Abstract;
-using furkantural.Domain.Enums;
+using furkantural.Application.Features.Contact.Commands;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Primitives;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Primitives;
 
 namespace furkantural.Controllers
 {
     [AllowAnonymous]
-    public class BaseController (
-        IOptions<SmtpOptions> smtpOptions,
-        ILogService logService,
-        IEmailService emailService,
-        ITurnstileService turnstileService,
-        IDateTimeProvider dateTime
-    ): Controller
+    public class BaseController(
+        IMediator mediator
+    ) : Controller
     {
         #region Properties
-        private readonly SmtpOptions _smtpOptions = smtpOptions.Value;
-        private readonly ILogService _logService = logService;
-        private readonly IEmailService _emailService = emailService;
-        private readonly ITurnstileService _turnstileService = turnstileService;
-        private readonly IDateTimeProvider _dateTime = dateTime;
+        private readonly IMediator _mediator = mediator;
         #endregion
 
         #region Methods
@@ -38,52 +28,24 @@ namespace furkantural.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SendMail(ContactFormRequest viewModel)
         {
-            // Pre-validate
-            if (!ModelState.IsValid) { return await Task.FromResult(BadRequest("Formda oynamalar yapmayalım, bu senin iyiliğin için.")); }
+            if (!ModelState.IsValid)
+                return BadRequest("Formda oynamalar yapmayalım, bu senin iyiliğin için.");
 
-            // Turnstile validation
-            var ipAddress = HttpContext.Connection.RemoteIpAddress?.ToString();
-            var turnstileResult = await _turnstileService.ValidateTokenAsync(viewModel.TurnstileResponse, ipAddress);
-            if (!turnstileResult.Success)
+            var command = new SendContactFormCommand
             {
-                // Hata mesajını servisten al
-                var msg = turnstileResult.Errors.FirstOrDefault() ?? "Güvenlik doğrulaması başarısız.";
-                ModelState.AddModelError(string.Empty, msg);
-                return await Task.FromResult(BadRequest(msg));
-            }
-
-            // Ready the placeholders before sending out.
-            var placeholders = new Dictionary<string, string>()
-            {
-                { "NameSurname", viewModel.NameSurname },
-                { "Email", viewModel.Email },
-                { "MessageNeed", viewModel.MessageNeed },
-                { "SendTime", _dateTime.Now.ToString("yyyy.MM.dd HH:mm") },
-                { "IpAddress", await GetClientIp(HttpContext) }
+                Email = viewModel.Email,
+                NameSurname = viewModel.NameSurname,
+                MessageNeed = viewModel.MessageNeed,
+                TurnstileResponse = viewModel.TurnstileResponse,
+                IpAddress = GetClientIp(HttpContext)
             };
 
-            // Log the attempt
-            await _logService.Info($"Visitor {viewModel.Email} is attempting to send a contact form.");
+            var result = await _mediator.Send(command);
 
-            // 1) Send to listener (Admin)
-            var adminMailResult = await _emailService.SendTransactionalEmailAsync(_smtpOptions.ListenerEmail, EmailType.Listener, placeholders);
+            if (!result.Success)
+                return BadRequest(result.Errors.FirstOrDefault() ?? "Bir hata oluştu.");
 
-            // 2) Send to user (Contact)
-            var userMailResult = await _emailService.SendTransactionalEmailAsync(viewModel.Email, EmailType.Contact, placeholders);
-
-            if (!adminMailResult.Success && !userMailResult.Success)
-            {
-                 // Eğer ikisi de başarısızsa kullanıcıya hata dön
-                 // Kullanıcıya giden mailin hatasını öncelikli göster
-                 var errorMsg = userMailResult.Errors.FirstOrDefault() ?? adminMailResult.Errors.FirstOrDefault() ?? "E-posta servisi şu anda çalışmıyor.";
-                 
-                 await _logService.Error($"Contact form submission failed for {viewModel.Email}.");
-                 return await Task.FromResult(BadRequest(errorMsg));
-            }
-
-            // Return ok if success (at least one sent)
-            await _logService.Success($"Contact form submitted successfully for {viewModel.Email}.");
-            return await Task.FromResult(Ok("Tamamdır, iletin bana ulaştı, en kısa sürede sana döneceğim!"));
+            return Ok(result.Message);
         }
 
         [HttpGet]
@@ -106,13 +68,11 @@ namespace furkantural.Controllers
         #endregion
 
         #region Helpers
-        private async Task<string> GetClientIp(HttpContext context)
+        private string GetClientIp(HttpContext context)
         {
-            // 1) Cloudflare özel bağlı var ise; (CF-Connection-IP)
             if (context.Request.Headers.TryGetValue("CF-Connecting-IP", out var cfIp) && !string.IsNullOrWhiteSpace(cfIp))
                 return cfIp.ToString();
 
-            // 2) Standart proxy/header: X-Forwarded-For (yani birden fazla geçişli de olabilir -> ilk gerçek istemci hangisiyse artık)
             if (context.Request.Headers.TryGetValue("X-Forwarded-For", out var xff) && !StringValues.IsNullOrEmpty(xff))
             {
                 var first = xff.ToString().Split(',', StringSplitOptions.RemoveEmptyEntries).Select(s => s.Trim()).FirstOrDefault();
@@ -120,19 +80,11 @@ namespace furkantural.Controllers
                     return first;
             }
 
-            // 3) Fallback: doğrudan bağlantı IP'si
             var remoteIp = context.Connection.RemoteIpAddress;
             if (remoteIp is not null)
             {
-                // IPv4 biçiminde almak istersen MapToIPv4 kullan
-                try
-                {
-                    return remoteIp.MapToIPv4().ToString();
-                }
-                catch
-                {
-                    return remoteIp.ToString();
-                }
+                try { return remoteIp.MapToIPv4().ToString(); }
+                catch { return remoteIp.ToString(); }
             }
 
             return "Unknown";
