@@ -1,11 +1,15 @@
-using furkantural.Infrastructure.Data;
+using furkantural.Application.Repositories;
 using furkantural.Domain.Entities;
 using furkantural.Application.Services.Abstract;
 using Microsoft.AspNetCore.Http;
 
 namespace furkantural.Infrastructure.Services.Concrete;
 
-public class LogService(AppDbContext context, IHttpContextAccessor httpContextAccessor) : ILogService
+public class LogService(
+    IRepository<Log> logRepository,
+    IUnitOfWork unitOfWork,
+    IHttpContextAccessor httpContextAccessor
+) : ILogService
 {
     private const string ProjectName = "FurkanTural";
 
@@ -24,8 +28,8 @@ public class LogService(AppDbContext context, IHttpContextAccessor httpContextAc
                 Path = GetPath()
             };
 
-            context.Logs.Add(log);
-            await context.SaveChangesAsync();
+            await logRepository.AddAsync(log);
+            await unitOfWork.SaveChangesAsync();
         }
         catch
         {
